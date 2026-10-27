@@ -17,7 +17,7 @@
 
 				<h2 style="--mg-t: 24px; --ft-c: black;">비밀번호</h2>
 				<div class="form-txt-type" style="--mg-t: 10px; --m-mg-t: 1.67vw;">
-					<input type="password" placeholder="비밀번호를 입력하세요.">
+					<input type="password" placeholder="비밀번호를 입력하세요!">
 				</div>
 			</div>
 			<a href="#" class="btn-type btn-sz-01" style="--mg-t: 40px; --btn-w: 100%; --m-mg-t: 5.56vw;">로그인</a>
