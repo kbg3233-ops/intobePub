@@ -3,7 +3,7 @@
 <div class="login-wrap">
 	<div class="pc">
 		<div style="--dp: flex; --content-x: center; --items-y: center; --bg-c: var(--mdc); --h: 100%;">
-			<img src="../images/img/img_logo_login.png">
+			<img src="../images/img/img_logo_login.png">	
 		</div>
 	</div>
 	<div style="--bg-c: #f8f9ff; --dp: flex; --items-y: center; --content-x: center; --pd-x: 40px; --m-pd-x: var(--init-layout-padding)">
