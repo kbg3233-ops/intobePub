@@ -47,3 +47,25 @@ PNG 시안(`알림.png`) 기준. 커밋 `13a1794`, `d7c6963`.
 - PC `li.read`는 기존 코드상 **파란 글씨**(안 읽은 알림처럼 보임). 의미가 반대지만 개발 연동 때문에 유지 — 개발 담당자 확인 필요.
 - 모바일 폭(768px 이하)에서는 기존 `page/popup/m-alarm.jsp`(`mobile-alarm`)가 뜸. 이번 수정 미적용.
 - PC 본문 제목(블루벨님, My 학습현황 등)과 사용자 팝업 이름은 아직 명조. PC 전체 Pretendard 전환 여부 미정.
+
+## 운영 소스 동기화 (2026-10-30, 미완료 — 회사 컴퓨터에서 이어서)
+
+작업 전에 운영 소스와 동기화해야 했는데, 10/27~10/30 작업 후에 알게 됨. 운영 소스와 지금 소스가 다를 수 있음.
+
+- 운영 저장소: `http://122.99.198.174/intobe/project/bluebell.git` (GitLab, http)
+- 회사 아이피에서만 접속되는 것으로 보임 → **회사 컴퓨터에서 진행**
+- 다른 PC에서 `git ls-remote` 했을 때: 서버 연결은 되지만 Git Credential Manager가 http 로그인을 막음
+  (`fatal: Unencrypted HTTP is not recommended for GitLab`).
+  해결: https 주소 확인(추천) / SSH 키 / 이 주소만 http 허용
+  `git config --global credential.http://122.99.198.174.allowUnsafeRemotes true` (비밀번호가 암호화 안 됨 — 사용자 확인 후 적용)
+
+### 진행 계획 (3-way merge)
+
+- 기준(base): 이번 작업 직전 커밋 `d5a6d1e` (2026-02-26)
+- 내 작업: `d5a6d1e` 이후 bluebell 커밋들 (알림 드롭다운·헤더 메뉴, 모바일 `app/` 등)
+- 운영: `bluebell.git` 현재 상태
+
+1. 운영 소스를 별도 폴더에 받는다 (예: `C:\work\bluebell-prod`). 지금 작업본은 건드리지 않음
+2. 운영 저장소 구조에서 우리 `bluebell/`(css, js, page, inc …)에 해당하는 경로를 찾는다
+3. `d5a6d1e` 기준 새 브랜치 → 운영 파일을 덮어써서 "운영 소스 동기화" 커밋
+4. 그 위에 내 작업 커밋을 rebase. 양쪽 다 바뀐 파일만 충돌 → 사용자와 함께 확인
