@@ -1,0 +1,17 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="54.0436" height="54.0208" viewBox="0 0 54.0436 54.0208" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="avatar" clip-path="url(#clip0_0_42)">
+<path id="avatar background" d="M27.0218 0C41.9455 0 54.0436 12.0929 54.0436 27.0105C54.0436 41.9279 41.9455 54.0208 27.0218 54.0208C12.0981 54.0208 0 41.9279 0 27.0105C0 12.0929 12.0981 0 27.0218 0Z" fill-rule="evenodd" clip-rule="evenodd" fill="#E2E2E2"/>
+<mask id="mask0_0_42" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="55" height="55">
+<path id="avatar_2" d="M27.0218 0C41.9455 0 54.0436 12.0929 54.0436 27.0105C54.0436 41.9279 41.9455 54.0208 27.0218 54.0208C12.0981 54.0208 0 41.9279 0 27.0105C0 12.0929 12.0981 0 27.0218 0Z" fill-rule="evenodd" clip-rule="evenodd" fill="white"/>
+</mask>
+<g mask="url(#mask0_0_42)">
+<path id="avatar_3" d="M23.8205 33.5H29.7895C39.2337 33.5 46.8899 41.156 46.8899 50.6004C46.8899 60.0447 39.2337 67.7008 29.7895 67.7008H23.8205C14.3762 67.7008 6.72003 60.0447 6.72003 50.6004C6.72003 41.156 14.3762 33.5 23.8205 33.5Z" fill-rule="evenodd" clip-rule="evenodd" fill="#F5F5F5"/>
+<path id="avatar_4" d="M26.9787 12.7627C32.021 12.7627 36.1085 16.8456 36.1085 21.8818C36.1085 26.9181 32.021 31.0007 26.9787 31.0007C21.9366 31.0007 17.8491 26.9181 17.8491 21.8818C17.8491 16.8456 21.9366 12.7627 26.9787 12.7627Z" fill-rule="evenodd" clip-rule="evenodd" fill="#F5F5F5"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_42">
+<rect width="54.0436" height="54.0208" fill="white"/>
+</clipPath>
+</defs>
+</svg>

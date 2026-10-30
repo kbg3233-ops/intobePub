@@ -1,0 +1,103 @@
+# 부루벨에듀 모바일 (bluebell/app)
+
+이 폴더에서 작업할 때 루트 `CLAUDE.md`와 함께 읽는 프로젝트 기록입니다.
+작업이 끝날 때마다 아래 "작업 기록"을 갱신합니다.
+
+## 배경
+
+- 기존 `bluebell/`은 PC + 반응형(`--m-` 변수) 웹. 스마트폰·태블릿 브라우저로 접속하면 **별도 모바일 페이지(이 폴더)** 로 이동하는 구조로 전환.
+- 기존 PC 폴더(`bluebell/css`, `page` 등)는 건드리지 않는다.
+- 폴더명이 `m`이 아닌 `app`인 이유: 루트 `.gitignore`에 `bluebell/m/`, `bluebell/pc/`가 있음 (넣은 사람 퇴사로 확인 불가 → 피해서 `app` 사용).
+
+## 시안
+
+- Figma: 부루벨에듀_모바일 — https://www.figma.com/design/ruyv05mdpEB01w42rCDG8r
+- 작업 기준 페이지: **최종** (섹션: 0. 앱 아이콘 / 1. 시작·공통 / 2. 교육과정 …)
+- 시안 기준 폭 **375px** (상단 상태바 47px, 하단 홈 인디케이터 20px은 마크업하지 않음 → `safe-area`로 처리)
+
+## 단위 / 반응형 규칙
+
+- vw를 직접 쓰지 않고 시안 px 값을 그대로 적는다: `calc(20 * var(--px))`
+- `--px = min(100vw, --m-max-w) / 375` (`css/root.css`)
+- 최대 폭 `--m-max-w: 480px` → 태블릿에서는 480px로 고정, 가운데 정렬
+- JS에서 같은 환산이 필요하면 `appPx(20)` (`js/front.js`, Chart.js 크기 등)
+- **배경색은 최대 폭 바깥까지 채운다** (요청사항): 영역에 `full-bg` 클래스 + `--full-bg: 색상` (`position` 지정 필요). 페이지 전체가 한 색이면 `body:has(.페이지클래스)`로 body 배경 지정 (splash 참고)
+
+## 파일 구조
+
+```
+app/
+├─ CLAUDE.md          (이 파일)
+├─ css/
+│   ├─ global.css     PC 공통(root, font, common, style) import + 아래 파일 import
+│   ├─ root.css       단위(--px), 높이, 시안 컬러 토큰
+│   ├─ font.css       Pretendard 300/400/500/600/700 (파일은 bluebell/fonts/)
+│   ├─ layout.css     래퍼, 헤더, 하단 탭바, full-bg
+│   ├─ ui.css         공통 컴포넌트
+│   └─ custom.css     페이지별 스타일
+├─ inc/               global_header / global_footer / header(메인) / sub_header / footer(탭바)
+├─ js/front.js        appPx, 헤더 탭 스크롤, 선택 토글
+├─ page/              화면 JSP
+├─ path/index.html    페이지 목록 (PC의 path.css/js 공유)
+└─ images/
+    ├─ ico/           아이콘 SVG (Figma에서 받음)
+    ├─ img/           로고 SVG, 푸터 로고, 배너 배경
+    └─ dummy/         임시 썸네일·배지 (실데이터 자리)
+```
+
+## 헤더 / 푸터 사용법
+
+페이지 맨 위에서 `request.setAttribute`로 지정 후 include.
+
+| 값 | 설명 |
+|---|---|
+| `pageTitle` | 서브 헤더 제목 |
+| `pageTabs` / `pageTabOn` | 서브 헤더 아래 탭 (`String[]`, 활성 순서 0부터) |
+| `hideUtil` | true → 알림·언어 아이콘 숨김 |
+| `headerType` | `"close"` → 뒤로가기 없이 제목 + 닫기(X) (알림) |
+| `tabbarOn` | 하단 메뉴 활성: home / course / study / team / all |
+| `hideTabbar` | true → 하단 메뉴 숨김 |
+
+- 메인 헤더: `inc/header.jsp`, 서브 헤더: `inc/sub_header.jsp`, 탭바 없는 화면(splash 등): `global_header.jsp` / `global_footer.jsp` 직접 include
+
+## 공통 컴포넌트 (`css/ui.css`)
+
+| 클래스 | Figma 컴포넌트 / 용도 |
+|---|---|
+| `.logo-edu` | Bluebell Edu 로고 (SVG). 크기는 `--logo-scale` (헤더 1 / 설치안내 1.133 / splash 1.246) |
+| `.btn-m-primary` | Button / Middle (높이 36) |
+| `.btn-s-dark`, `.btn-s-gray` | Button / Small (높이 28) |
+| `.btn-more` | Text Button (더보기 / 자세히보기 + > 아이콘) |
+| `.lnk-info` | info 아이콘 + 밑줄 링크 |
+| `.card-box` | 흰 카드 (테두리 #ececec, radius 4) |
+| `.sec-head` + `.sec-tit` / `.sec-tit-lg` | 섹션 제목 + 더보기 |
+| `.course-card` | 썸네일 과정 카드 |
+| `.h-scroll` | 가로 스크롤 목록 (카드 폭 215.33) |
+| `.seg-toggle` | 선택 토글 (국문/영문), 선택 버튼 `.active` |
+| `.list-count` | List Count (전체 7) |
+
+- 하단 탭바 아이콘은 SVG + CSS `mask`로 색 변경 (활성/비활성). PNG 스프라이트 전환 여부는 미정.
+- 차트는 PC와 같은 Chart.js(`../../js/chart.js`) + datalabels 사용.
+
+## 작업 기록
+
+### 1. 시작·공통 — 완료 (2026-10-30)
+
+| 화면 | 파일 | 비고 |
+|---|---|---|
+| splash | `page/splash.jsp` | 배경 #f5f7fa 바깥까지 |
+| 앱 설치 안내 | `page/install.jsp` | Android / iPhone 카드 |
+| 메인 | `page/main.jsp` | 프로필·배지, 학습현황 차트, 진행현황, 공지/FAQ, 추천 교육 2종, 바로가기 배너, 푸터 |
+| 알림 | `page/notice.jsp` | 닫기형 헤더, 탭바 없음, 읽은 알림 `li.read` |
+
+### 2. 교육과정 — 다음 작업
+
+정규과정 / 교육과정 조회 / 교육과정 조회 - 상세검색
+
+## 남은 확인 사항
+
+- `images/img/img_roadmap_bg.png` 1.8MB → JPG 변환 필요
+- 로고 엠블럼은 Figma 원본이 PNG라 SVG 안에 이미지로 들어감 (완전 벡터 필요하면 원본 요청)
+- 본문 기본 글자 크기(`--init-font-size`) 16px로 임시 설정
+- 메인 공지 제목은 말줄임 확인용 임의 문구
+- 알림 시안 "전체 7"인데 목록은 6개 (시안 그대로)

@@ -4,7 +4,7 @@
 		--m-max-w 이상(태블릿)에서는 크기 고정, 가운데 정렬
 	*/
 		--m-design-w: 375; /* 모바일 시안 기준 폭 */
-		--m-max-w: 750px; /* 최대 폭 */
+		--m-max-w: 480px; /* 최대 폭 */
 		--px: calc(min(100vw, var(--m-max-w)) / var(--m-design-w)); /* 시안 1px */
 
 	/* Initialize */
@@ -21,5 +21,9 @@
 		--primary-disabled: #a0b5be; /* primary/disabled */
 		--text-primary: #333; /* text/primary */
 		--text-secondary: #666; /* text/secondary */
+		--text-tertiary: #999; /* text/tertiary */
+		--text-on-primary: white; /* text/on-primary */
+		--bg-page: #f5f7fa; /* bg/page */
+		--brand-grey: #d2dae4; /* brand/grey */
 		--border-disabled: #ececec; /* border/disabled */
 }

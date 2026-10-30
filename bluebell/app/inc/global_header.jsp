@@ -12,6 +12,8 @@
 		<link rel="stylesheet" href="../css/global.css" type="text/css">
 
 		<script src="../../js/common.js"></script>
+		<script src="../../js/chart.js"></script>
+		<script src="../../js/chartjs-plugin-datalabels.js"></script>
 		<script src="../js/front.js"></script>
 	</head>
 	<body>

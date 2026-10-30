@@ -1,0 +1,59 @@
+/* Logo (Bluebell Edu)
+	--logo-scale : 헤더 1 / 앱 설치 안내 1.133 / splash 1.246
+*/
+	.logo-edu { --logo-scale: 1; display: block; }
+	.logo-edu img { width: calc(186.2 * var(--logo-scale) * var(--px)); height: auto; }
+
+/* Button / Middle (높이 36, radius 4)
+	.btn-m-primary : Primary 채움
+*/
+	[class*="btn-m-"] { display: flex; place-items: center; place-content: center; gap: calc(6 * var(--px)); height: calc(36 * var(--px)); padding-inline: calc(17 * var(--px)); border-radius: calc(4 * var(--px)); font-weight: 300; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); white-space: nowrap; }
+	.btn-m-primary { background: var(--primary-default); color: var(--text-on-primary); }
+
+/* Button / Small (높이 28, radius 3)
+	.btn-s-dark : brand/dark 채움
+*/
+	[class*="btn-s-"] { display: inline-flex; place-items: center; place-content: center; gap: calc(6 * var(--px)); flex-shrink: 0; height: calc(28 * var(--px)); padding-inline: calc(12 * var(--px)); border-radius: calc(3 * var(--px)); font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); white-space: nowrap; }
+	.btn-s-dark { background: var(--brand-dark); color: var(--text-on-primary); }
+	.btn-s-gray { padding-inline: calc(16 * var(--px)); background: #f5f5f5; font-weight: 500; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-primary); }
+
+/* 선택 토글 (국문/영문 등) : 선택된 버튼에 .active */
+	.seg-toggle { display: flex; flex-shrink: 0; }
+	.seg-toggle button { height: calc(24 * var(--px)); padding-inline: calc(8.57 * var(--px)); border: 0.857px solid #c9c9c9; background: white; font-weight: 500; font-size: calc(12 * var(--px)); line-height: calc(17.14 * var(--px)); color: var(--text-tertiary); white-space: nowrap; }
+	.seg-toggle button + button { border-left: 0; }
+	.seg-toggle button:first-child { border-radius: calc(2.57 * var(--px)) 0 0 calc(2.57 * var(--px)); }
+	.seg-toggle button:last-child { border-radius: 0 calc(2.57 * var(--px)) calc(2.57 * var(--px)) 0; }
+	.seg-toggle button.active { border-color: var(--brand-dark); background: var(--brand-dark); color: var(--text-on-primary); }
+
+/* List Count (전체 7) */
+	.list-count { display: flex; place-items: center; gap: calc(4 * var(--px)); font-weight: 600; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-primary); }
+	.list-count em { color: var(--text-tertiary); }
+
+/* Text Button (글자 + > 아이콘 : 더보기, 자세히보기) */
+	.btn-more { display: inline-flex; place-items: center; gap: calc(2 * var(--px)); flex-shrink: 0; font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-secondary); white-space: nowrap; }
+	.btn-more::after { content: ""; width: calc(12 * var(--px)); height: calc(12 * var(--px)); background: url("../images/ico/ico_chevron_r.svg") no-repeat center / contain; }
+
+/* Card (흰 배경 + 테두리) */
+	.card-box { padding: calc(24 * var(--px)) calc(20 * var(--px)); border: 1px solid var(--border-disabled); border-radius: calc(4 * var(--px)); background: white; }
+
+/* 섹션 타이틀 + 더보기 */
+	.sec-head { display: flex; place-items: center; place-content: space-between; }
+	.sec-head .sec-tit { font-weight: 600; font-size: calc(16 * var(--px)); line-height: calc(22 * var(--px)); color: var(--text-primary); }
+	.sec-head .sec-tit-lg { font-weight: 600; font-size: calc(20 * var(--px)); line-height: calc(28 * var(--px)); color: var(--primary-default); }
+
+/* Course Card (썸네일 + 과정명 + 설명 + 기간) */
+	.course-card { display: flex; flex-direction: column; gap: calc(10 * var(--px)); min-width: 0; }
+	.course-card .thumb { overflow: hidden; aspect-ratio: 163.5 / 91.97; border-radius: calc(4 * var(--px)); }
+	.course-card .thumb img { width: 100%; height: 100%; object-fit: cover; }
+	.course-card .tit { overflow: hidden; font-weight: 600; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-primary); text-overflow: ellipsis; white-space: nowrap; }
+	.course-card .desc { margin-top: calc(4 * var(--px)); font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-primary); }
+	.course-card .date { margin-top: calc(2 * var(--px)); font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-secondary); }
+
+/* 가로 스크롤 목록 (오른쪽 끝까지 이어짐) */
+	.h-scroll { display: flex; gap: calc(12 * var(--px)); overflow-x: auto; padding-right: var(--init-layout-padding); scrollbar-width: none; }
+	.h-scroll::-webkit-scrollbar { display: none; }
+	.h-scroll > * { flex-shrink: 0; width: calc(215.33 * var(--px)); }
+
+/* 안내 링크 (info 아이콘 + 밑줄) */
+	.lnk-info { display: inline-flex; place-items: center; gap: calc(4 * var(--px)); border-bottom: 1px solid var(--brand-grey); font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-secondary); }
+	.lnk-info img { width: calc(12 * var(--px)); height: calc(12 * var(--px)); }
