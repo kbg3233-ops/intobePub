@@ -24,13 +24,8 @@
 	.h-wrap .h-tit { display: flex; place-items: center; font-weight: 600; font-size: calc(22 * var(--px)); line-height: calc(30 * var(--px)); color: var(--text-primary); }
 	.h-wrap .h-tit .btn-back img { width: calc(24 * var(--px)); height: calc(24 * var(--px)); }
 
-	/* 서브 - 닫기 */
-	.h-wrap .btn-close img { width: calc(27 * var(--px)); height: calc(27 * var(--px)); }
-
 	/* 하단 선 (최대 폭 바깥까지) */
-	.h-wrap.h-close .h-gnb,
 	.h-wrap .h-tab { position: relative; }
-	.h-wrap.h-close .h-gnb::after,
 	.h-wrap .h-tab::after { content: ""; position: absolute; left: 50%; bottom: 0; width: 100vw; height: 1px; transform: translateX(-50%); background: var(--border-disabled); }
 
 	/* 서브 - 탭 */

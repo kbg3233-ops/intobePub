@@ -1,7 +1,16 @@
 $(function () {
 	$(".h-tab").hTab(); // 헤더 탭 활성 위치로 스크롤
 	$(".seg-toggle").segToggle(); // 선택 토글
+	$(document).tta(); // 활성화 토글 (팝업 열기/닫기)
 });
+
+// 활성화 토글 : data-tta="이름" 클릭 시 data-ttatg="이름"에 .active 토글 (PC front.js와 같은 방식)
+$.fn.tta = function () {
+	$(this).on("click", "[data-tta]", function (e) {
+		e.stopPropagation();
+		$("[data-ttatg='" + $(this).data("tta") + "']").toggleClass("active");
+	});
+};
 
 // 선택 토글
 $.fn.segToggle = function () {

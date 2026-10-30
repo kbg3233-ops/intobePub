@@ -25,6 +25,18 @@
 	.seg-toggle button:last-child { border-radius: 0 calc(2.57 * var(--px)) calc(2.57 * var(--px)) 0; }
 	.seg-toggle button.active { border-color: var(--brand-dark); background: var(--brand-dark); color: var(--text-on-primary); }
 
+/* Popup - 전체 화면 (오른쪽에서 열림)
+	열기/닫기 : data-tta="이름" 버튼 ↔ data-ttatg="이름" 팝업 (.active)
+*/
+	.pop-type-full { position: fixed; left: 100%; top: 0; z-index: 200; overflow-x: hidden; overflow-y: auto; width: 100%; height: 100dvh; background: white; transition: left .3s; }
+	.pop-type-full.active { left: 0; }
+	.pop-type-full .part-wrap { max-width: var(--m-max-w); min-height: 100%; margin: 0 auto; }
+	.pop-type-full .part-head { position: sticky; top: 0; z-index: 10; display: flex; place-items: center; place-content: space-between; height: calc(var(--init-header-height) + env(safe-area-inset-top)); padding: env(safe-area-inset-top) var(--init-layout-padding) 0; background: white; }
+	.pop-type-full .part-head::after { content: ""; position: absolute; left: 50%; bottom: 0; width: 100vw; height: 1px; transform: translateX(-50%); background: var(--border-disabled); } /* 하단 선 (최대 폭 바깥까지) */
+	.pop-type-full .part-title { font-weight: 600; font-size: calc(22 * var(--px)); line-height: calc(30 * var(--px)); color: var(--text-primary); }
+	.pop-type-full .part-close { width: calc(27 * var(--px)); height: calc(27 * var(--px)); background: url("../images/ico/ico_close.svg") no-repeat center / contain; text-indent: -1000em; overflow: hidden; }
+	body:has(.pop-type-full.active) { overflow: hidden; } /* 팝업 열린 동안 뒤 화면 스크롤 막기 */
+
 /* List Count (전체 7) */
 	.list-count { display: flex; place-items: center; gap: calc(4 * var(--px)); font-weight: 600; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-primary); }
 	.list-count em { color: var(--text-tertiary); }

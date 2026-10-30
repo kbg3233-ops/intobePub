@@ -32,6 +32,7 @@ $(function () {
 	$(document).acoUI(); // 아코디언
 	$(document).tta(); // 활성화 토글
 	$(document).selfTg(); // 셀프 활성화
+	$(document).segToggle(); // 선택 토글 (국문/영문)
 	$("[class*='swi-type']").swiperInit(); // 스와이퍼
 	$(document).inpPswd(); // 비밀번호 보이기 토글
 	$(".tab-wrap").tabUI(); // 탭메뉴
@@ -148,6 +149,14 @@ $.fn.selfTg = function () {
 
 	$obj.on("click", "[data-self]", function () {
 		$(this).toggleClass("active");
+	});
+};
+
+// 선택 토글 : .seg-toggle 안의 버튼 중 하나만 .active
+$.fn.segToggle = function () {
+	$(this).on("click", ".seg-toggle button", function () {
+		$(this).siblings().removeClass("active").attr("aria-pressed", "false");
+		$(this).addClass("active").attr("aria-pressed", "true");
 	});
 };
 

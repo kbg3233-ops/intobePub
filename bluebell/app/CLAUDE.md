@@ -30,8 +30,8 @@ app/
 ├─ CLAUDE.md          (이 파일)
 ├─ css/
 │   ├─ global.css     PC 공통(root, font, common, style) import + 아래 파일 import
+│   │                 (Pretendard 300~700은 PC `bluebell/css/font.css`에 등록, 파일은 `bluebell/fonts/`)
 │   ├─ root.css       단위(--px), 높이, 시안 컬러 토큰
-│   ├─ font.css       Pretendard 300/400/500/600/700 (파일은 bluebell/fonts/)
 │   ├─ layout.css     래퍼, 헤더, 하단 탭바, full-bg
 │   ├─ ui.css         공통 컴포넌트
 │   └─ custom.css     페이지별 스타일
@@ -54,11 +54,17 @@ app/
 | `pageTitle` | 서브 헤더 제목 |
 | `pageTabs` / `pageTabOn` | 서브 헤더 아래 탭 (`String[]`, 활성 순서 0부터) |
 | `hideUtil` | true → 알림·언어 아이콘 숨김 |
-| `headerType` | `"close"` → 뒤로가기 없이 제목 + 닫기(X) (알림) |
 | `tabbarOn` | 하단 메뉴 활성: home / course / study / team / all |
 | `hideTabbar` | true → 하단 메뉴 숨김 |
 
 - 메인 헤더: `inc/header.jsp`, 서브 헤더: `inc/sub_header.jsp`, 탭바 없는 화면(splash 등): `global_header.jsp` / `global_footer.jsp` 직접 include
+
+## 팝업
+
+- PC·아주대와 같은 방식: 팝업 파일은 `page/popup/이름.jsp` (`data-ttatg="이름"`), 여는 버튼은 `data-tta="이름"` → `.active` 토글 (`js/front.js`의 `tta`)
+- 확인용 목록 페이지: `page/popup.jsp` (path 맨 위 "팝업"). 새 팝업을 만들면 여기에 버튼 추가
+- 전체 화면 팝업: `.pop-type-full` (`.part-wrap` / `.part-head` / `.part-title` / `.part-close` / `.part-cont`)
+- 알림 팝업(`popup/alarm.jsp`)은 `header.jsp`, `sub_header.jsp`에 include되어 있음 (PC 헤더의 m-alarm과 같은 구조)
 
 ## 공통 컴포넌트 (`css/ui.css`)
 
@@ -88,7 +94,7 @@ app/
 | splash | `page/splash.jsp` | 배경 #f5f7fa 바깥까지 |
 | 앱 설치 안내 | `page/install.jsp` | Android / iPhone 카드 |
 | 메인 | `page/main.jsp` | 프로필·배지, 학습현황 차트, 진행현황, 공지/FAQ, 추천 교육 2종, 바로가기 배너, 푸터 |
-| 알림 | `page/notice.jsp` | 닫기형 헤더, 탭바 없음, 읽은 알림 `li.read` |
+| 알림 (팝업) | `page/popup/alarm.jsp` | 헤더 종 아이콘으로 열림, 읽은 알림 `li.read` |
 
 ### 2. 교육과정 — 다음 작업
 
