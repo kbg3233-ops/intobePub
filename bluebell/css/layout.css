@@ -57,7 +57,7 @@ body, #app {display:flex; flex-direction:column; place-content:space-between; fl
 	.h-wrap .h-alarm-lang .part-tit { display: flex; place-items: center; gap: 8px; font-weight: bold; font-size: 16px; color: #222; }
 	.h-wrap .h-alarm-lang .part-tit .ic-bell { zoom: .62; }
 	.h-wrap .h-alarm-lang .part-tit .ic-bell:before { filter: invert(1) brightness(.2); }
-	.h-wrap .h-alarm-lang .part-desc { margin-top: 10px; font-size: 13px; color: #999; }
+	.h-wrap .h-alarm-lang .part-desc { margin-top: 10px; font-size: 14px; color: #999; }
 
 	/* 선택 토글 (국문/영문) : 선택된 버튼에 .active */
 	.seg-toggle { display: flex; flex-shrink: 0; }
