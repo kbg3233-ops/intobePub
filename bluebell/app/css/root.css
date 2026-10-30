@@ -1,0 +1,25 @@
+:root {
+	/* Unit
+		시안(375px) 1px = calc(1 * var(--px))
+		--m-max-w 이상(태블릿)에서는 크기 고정, 가운데 정렬
+	*/
+		--m-design-w: 375; /* 모바일 시안 기준 폭 */
+		--m-max-w: 750px; /* 최대 폭 */
+		--px: calc(min(100vw, var(--m-max-w)) / var(--m-design-w)); /* 시안 1px */
+
+	/* Initialize */
+		--init-font-family: "Pretendard", "Noto Sans KR", sans-serif; /* 글자체 */
+		--init-font-size: calc(16 * var(--px)); /* 글자 크기 (본문 기준 확인 필요) */
+		--init-header-height: calc(60 * var(--px)); /* 헤더 높이 */
+		--init-header-tab-height: calc(40 * var(--px)); /* 헤더 탭 높이 */
+		--init-tabbar-height: calc(67 * var(--px)); /* 하단 메뉴 높이 (홈 인디케이터 영역 제외) */
+		--init-layout-padding: calc(20 * var(--px)); /* 레이아웃 좌우 여백 */
+
+	/* Color (시안 토큰) */
+		--brand-dark: #003349; /* brand/dark */
+		--primary-default: var(--mc); /* primary/default */
+		--primary-disabled: #a0b5be; /* primary/disabled */
+		--text-primary: #333; /* text/primary */
+		--text-secondary: #666; /* text/secondary */
+		--border-disabled: #ececec; /* border/disabled */
+}

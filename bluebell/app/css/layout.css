@@ -1,0 +1,42 @@
+/* Wrap */
+	.m-wrap { position: relative; display: flex; flex-direction: column; max-width: var(--m-max-w); min-height: 100dvh; margin: 0 auto; padding-bottom: calc(var(--init-tabbar-height) + env(safe-area-inset-bottom)); background: white; }
+	.m-wrap #container { flex: 1; }
+	.layout-inner { padding-inline: var(--init-layout-padding); }
+
+/* Header */
+	.h-wrap { position: sticky; top: 0; z-index: 100; background: white; padding-top: env(safe-area-inset-top); }
+	.h-wrap .h-gnb { display: flex; place-items: center; place-content: space-between; height: var(--init-header-height); padding-inline: var(--init-layout-padding); }
+
+	.h-wrap .h-util { display: flex; place-items: center; place-content: space-between; width: calc(74 * var(--px)); }
+	.h-wrap .h-util .btn-alarm { display: flex; place-items: center; place-content: center; width: calc(30 * var(--px)); height: calc(30 * var(--px)); }
+	.h-wrap .h-util .btn-alarm img { width: calc(21.7 * var(--px)); height: calc(26.7 * var(--px)); }
+	.h-wrap .h-util .btn-lang img { width: calc(27.03 * var(--px)); height: calc(24 * var(--px)); }
+
+	/* 메인 */
+	.h-wrap.h-main { background: var(--brand-dark); }
+	.h-wrap .h-logo a { display: flex; place-items: center; gap: calc(10 * var(--px)); font-family: Georgia, serif; font-weight: 700; font-size: calc(23 * var(--px)); color: var(--primary-default); white-space: nowrap; }
+	.h-wrap .h-logo img { width: calc(24 * var(--px)); height: calc(22 * var(--px)); transform: scaleY(-1); }
+
+	/* 서브 */
+	.h-wrap .h-tit { display: flex; place-items: center; font-weight: 600; font-size: calc(22 * var(--px)); line-height: calc(30 * var(--px)); color: var(--text-primary); }
+	.h-wrap .h-tit .btn-back img { width: calc(24 * var(--px)); height: calc(24 * var(--px)); }
+
+	/* 서브 - 탭 */
+	.h-wrap .h-tab { display: flex; flex-direction: column; place-content: flex-end; height: var(--init-header-tab-height); padding-top: calc(10 * var(--px)); border-bottom: 1px solid var(--border-disabled); }
+	.h-wrap .h-tab ul { display: flex; gap: calc(16 * var(--px)); overflow-x: auto; padding-inline: var(--init-layout-padding); list-style: none; scrollbar-width: none; }
+	.h-wrap .h-tab ul::-webkit-scrollbar { display: none; }
+	.h-wrap .h-tab a { display: flex; flex-direction: column; gap: calc(8 * var(--px)); font-weight: 600; font-size: calc(16 * var(--px)); line-height: calc(22 * var(--px)); color: var(--primary-disabled); white-space: nowrap; }
+	.h-wrap .h-tab a::after { content: ""; height: 1.5px; }
+	.h-wrap .h-tab .active a { color: var(--brand-dark); }
+	.h-wrap .h-tab .active a::after { background: var(--brand-dark); }
+
+/* Tab Bar (하단 메뉴) */
+	.tabbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 100; display: flex; place-content: space-between; max-width: var(--m-max-w); margin: 0 auto; padding: 0 calc(10 * var(--px)) env(safe-area-inset-bottom); background: white; border-top: 1px solid var(--border-disabled); list-style: none; }
+	.tabbar a { display: flex; flex-direction: column; place-items: center; gap: calc(6 * var(--px)); width: calc(48 * var(--px)); padding-block: calc(10 * var(--px)); font-weight: 600; font-size: calc(10 * var(--px)); line-height: calc(14 * var(--px)); color: var(--text-secondary); white-space: nowrap; }
+	.tabbar a::before { content: ""; width: calc(26 * var(--px)); height: calc(26 * var(--px)); background-color: currentColor; -webkit-mask: no-repeat center / contain; mask: no-repeat center / contain; }
+	.tabbar .active a { color: var(--primary-default); }
+	.tabbar .tb-home a::before { -webkit-mask-image: url("../images/ico/ico_tab_home.svg"); mask-image: url("../images/ico/ico_tab_home.svg"); }
+	.tabbar .tb-course a::before { -webkit-mask-image: url("../images/ico/ico_tab_course.svg"); mask-image: url("../images/ico/ico_tab_course.svg"); }
+	.tabbar .tb-study a::before { -webkit-mask-image: url("../images/ico/ico_tab_study.svg"); mask-image: url("../images/ico/ico_tab_study.svg"); }
+	.tabbar .tb-team a::before { -webkit-mask-image: url("../images/ico/ico_tab_team.svg"); mask-image: url("../images/ico/ico_tab_team.svg"); }
+	.tabbar .tb-all a::before { -webkit-mask-image: url("../images/ico/ico_tab_all.svg"); mask-image: url("../images/ico/ico_tab_all.svg"); }

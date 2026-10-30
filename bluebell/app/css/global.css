@@ -1,0 +1,11 @@
+/* 공통 (PC 폴더 공유) */
+@import "../../css/root.css";
+@import "../../css/font.css";
+@import "../../css/common.css";
+@import "../../css/style.css";
+
+/* 모바일 */
+@import "root.css";
+@import "font.css";
+@import "layout.css";
+@import "custom.css";
