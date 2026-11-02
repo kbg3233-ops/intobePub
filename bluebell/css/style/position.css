@@ -5,7 +5,7 @@
 [style*="--right"] { right: var(--right); }
 [style*="--z-idx"] { z-index: var(--z-idx); }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	[style*="--m-pos"] { position: var(--m-pos); }
 	[style*="--m-left"] { left: var(--m-left); }
 	[style*="--m-top"] { top: var(--m-top); }

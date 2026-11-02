@@ -1,7 +1,7 @@
 [style*="--grid-col"] { grid-column: span var(--grid-col); }
 [style*="--grid-t-col"] { grid-template-columns: repeat(var(--grid-t-col), 1fr); }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	[style*="--m-grid-col"] { grid-column: span var(--m-grid-col); }
 	[style*="--m-grid-t-col"] { grid-template-columns: repeat(var(--m-grid-t-col), 1fr); }
 }

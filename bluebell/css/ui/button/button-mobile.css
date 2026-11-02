@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	/* Initialize */
 		[class*="btn-type"] {
 			--m-btn-bg-c: var(--btn-bg-c);
@@ -11,7 +11,7 @@
 			--m-btn-dis-ft-c: var(--btn-dis-ft-c);
 			--m-btn-ft-s: var(--btn-ft-s);
 			--m-btn-ft-c: var(--btn-ft-c);
-			--m-btn-gap: 3.33vw;
+			--m-btn-gap: 3.33vmin;
 			--m-btn-min-w: var(--btn-min-w);
 			--m-btn-over-bg-c: var(--btn-over-bg-c);
 			--m-btn-over-bd-c: var(--btn-over-bd-c);

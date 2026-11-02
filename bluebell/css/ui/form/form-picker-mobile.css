@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	/* Initialize */
 		[class*="form-color"] {
 			--m-form-bd-s: solid;
@@ -12,8 +12,8 @@
 		[class*="form-txt-date"] {
 			--m-form-h: var(--form-h);
 			--m-form-pad-x: var(--form-pad-x);
-			--m-form-icon-w: 3.33vw;
-			--m-form-icon-h: 3.89vw;
+			--m-form-icon-w: 3.33vmin;
+			--m-form-icon-h: 3.89vmin;
 		}
 
 		[class*="form-txt-date"] [class*="calendar-type"] { margin-top: var(--m-form-bd-w); }
@@ -62,20 +62,20 @@
 		}
 
 		/* jQuery UI Datepicker */
-		[class*="form-txt-date"] .ui-datepicker-trigger:before { background-position: var(--bp-300) var(--bp-input); width: 3.06vw; height: 3.33vw; }
+		[class*="form-txt-date"] .ui-datepicker-trigger:before { background-position: var(--bp-300) var(--bp-input); width: 3.06vmin; height: 3.33vmin; }
 
-		.ui-datepicker { left: 10vw !important; border-radius: 2.22vw; width: 80vw; padding:5.56vw 3.47vw; }
-		.ui-datepicker .ui-datepicker-title { font-size: 4.44vw; line-height: 6.94vw; padding: 2.78vw 0; }
+		.ui-datepicker { left: 10vmin !important; border-radius: 2.22vmin; width: 80vmin; padding:5.56vmin 3.47vmin; }
+		.ui-datepicker .ui-datepicker-title { font-size: 4.44vmin; line-height: 6.94vmin; padding: 2.78vmin 0; }
 		.ui-datepicker .ui-datepicker-prev,
-		.ui-datepicker .ui-datepicker-next { width: 5.56vw; height: 5.56vw; }
+		.ui-datepicker .ui-datepicker-next { width: 5.56vmin; height: 5.56vmin; }
 		.ui-datepicker .ui-datepicker-prev:before,
-		.ui-datepicker .ui-datepicker-next:before { width: 1.25vw; height: 2.64vw;}
-		.ui-datepicker .ui-datepicker-prev { left: 5.56vw; }
-		.ui-datepicker .ui-datepicker-next { right: 5.56vw; }
-		.ui-datepicker .ui-datepicker-calendar th { height: 4.86vw; font-size: 3.33vw; }
-		.ui-datepicker .ui-datepicker-calendar td { height: 9.72vw; }
-		.ui-datepicker .ui-datepicker-calendar td a { width: 9.72vw; line-height: 9.72vw; font-size: 4.44vw; }
-		.ui-datepicker .ui-datepicker-calendar td a.ui-state-active { height: 9.72vw; }
+		.ui-datepicker .ui-datepicker-next:before { width: 1.25vmin; height: 2.64vmin;}
+		.ui-datepicker .ui-datepicker-prev { left: 5.56vmin; }
+		.ui-datepicker .ui-datepicker-next { right: 5.56vmin; }
+		.ui-datepicker .ui-datepicker-calendar th { height: 4.86vmin; font-size: 3.33vmin; }
+		.ui-datepicker .ui-datepicker-calendar td { height: 9.72vmin; }
+		.ui-datepicker .ui-datepicker-calendar td a { width: 9.72vmin; line-height: 9.72vmin; font-size: 4.44vmin; }
+		.ui-datepicker .ui-datepicker-calendar td a.ui-state-active { height: 9.72vmin; }
 		.ui-datepicker th:first-child,
 		.ui-datepicker td:first-child {color:red;}
 

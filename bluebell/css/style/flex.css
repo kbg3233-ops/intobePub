@@ -19,7 +19,7 @@
 	--flex-b: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	[style*="--m-flex"],
 	[class*="flex"] {
 		--m-flex-g: var(--flex-g);

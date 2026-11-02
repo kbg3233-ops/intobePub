@@ -1,5 +1,5 @@
 [style*="--bg-c"] { background-color: var(--bg-c); }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	[style*="--m-bg-c"] { background-color: var(--m-bg-c); }
 }

@@ -29,7 +29,7 @@
 	place-items: var(--items-y, var(--items-a)) var(--items-x, var(--items-a));
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	[style*="--gap"] {
 		--m-gap-a: var(--gap-a);
 		--m-gap-x: var(--m-gap-a);

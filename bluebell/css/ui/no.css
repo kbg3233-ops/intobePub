@@ -1,6 +1,6 @@
 /* No Data */
 	.no-data { display: flex; flex-direction: column; place-items: center; place-content: center; height: var(--h, 100%); text-align: center;}
 
-@media screen and (max-width:720px) {
+@media screen and (max-width:720px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	.no-data { height: var(--m-h, var(--h, 100%)); }
 }

@@ -5,7 +5,7 @@
 [style*="--min-w"] { min-width: var(--min-w); }
 [style*="--min-h"] { min-height: var(--min-h); }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	[style*="--m-w"] { width: var(--m-w); }
 	[style*="--m-h"] { height: var(--m-h); }
 	[style*="--m-max-w"] { max-width: var(--m-max-w); }

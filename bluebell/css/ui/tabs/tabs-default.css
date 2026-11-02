@@ -11,6 +11,20 @@
 /* Equal Menu */
 	[class*="tab-wrap"].tab-equal [class*="tab-menu"] > * { flex: 1; }
 
+/* 모바일에서 탭 스크롤 가능하도록 flex 오버라이드 */
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
+	[class*="tab-wrap"].tab-equal [class*="tab-menu"],
+	[class*="tab-wrap"].tab-scroll-menu [class*="tab-menu"] {
+		width: max-content !important;
+		min-width: 100% !important;
+	}
+	[class*="tab-wrap"].tab-equal [class*="tab-menu"] > *,
+	[class*="tab-wrap"].tab-scroll-menu [class*="tab-menu"] > * {
+		flex: 0 0 auto !important;
+		min-width: auto !important;
+	}
+}
+
 /* Content */
 	[class*="tab-wrap"] [class*="tab-cont"] > * { display: none; }
 	[class*="tab-wrap"] [class*="tab-cont"] > *.active { display: block; }

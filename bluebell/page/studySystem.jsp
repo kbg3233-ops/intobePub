@@ -187,7 +187,7 @@
 											<li>
 												<div class="part-content">
 													학습 희망 과정을 개설 신청하고, 매니저의 사전 승인을 받습니다. <strong style="--ft-s: 14px;"><em>마이픽 과정 개설 신청</em></strong>
-													<p><q style="--ft-s: 14px;">※차이홍 과정의 경우, 차이홍 상담센터에 연락해 과정 상담 및 신청한 후 smart BBK에서 과정 개성을 신청합니다.</q></p>
+													<p><q style="--ft-s: 14px;">※차이홍 과정의 경우, 차이홍 상담센터에 연락해 과정 상담 및 신청한 후 Bluebell Edu에서 과정 개성을 신청합니다.</q></p>
 												</div>
 											</li>
 											<li>개인 비용으로 결제 후 학습을 시작합니다.</li>

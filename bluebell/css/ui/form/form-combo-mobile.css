@@ -1,4 +1,4 @@
-@media screen and (max-width:768px) {
+@media screen and (max-width:768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	/* Initialize */
 		[class*="form-sel"],
 		[class*="sel-type"] {
@@ -17,8 +17,8 @@
 			--m-form-pd-r: var(--form-pd-r);
 			--m-form-ph-c: var(--form-ph-c);
 
-			--m-form-icon-w: 2.22vw;
-			--m-form-icon-h: 1.53vw;
+			--m-form-icon-w: 2.22vmin;
+			--m-form-icon-h: 1.53vmin;
 
 			--m-form-focus-bd-c: var(--form-focus-bd-c);
 			--m-form-focus-bg-c: var(--form-focus-bg-c);

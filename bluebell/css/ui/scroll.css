@@ -17,7 +17,7 @@
 	[data-scroll="xh"]::-webkit-scrollbar-track,
 	[data-scroll="yh"]::-webkit-scrollbar-track { border-radius: 0; }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 720px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	/* Scroll */
 		[data-scroll="y"],
 		[data-scroll="yh"] { height: var(--m-h, var(--h, 100%)); }

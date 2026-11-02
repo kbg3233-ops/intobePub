@@ -1,7 +1,6 @@
 /* Default */
 	[class*="thumb-type"] { position: relative; display: flex; flex-wrap: nowrap; place-content: center; place-items: center; background-position: center; background-repeat: no-repeat; }
-	[class*="thumb-type"] > *:is(img, video) { width: 100%; height: 100%; }
-	[class*="thumb-type"] video { object-fit: cover; }
+	[class*="thumb-type"] > *:is(img, video) { width: 100%; height: 100%; object-fit: cover; }
 	[class*="thumb-type"]:before,
 	[class*="thumb-type"]:after { content: ""; }
 	[class*="thumb-type"] > *:not(img, video) { position: absolute; }

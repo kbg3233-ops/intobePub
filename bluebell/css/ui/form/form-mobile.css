@@ -1,4 +1,4 @@
-@media screen and (max-width: 720px) {
-	.form-file-lst-02 > * { gap: 2.78vw; }
+@media screen and (max-width: 720px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
+	.form-file-lst-02 > * { gap: 2.78vmin; }
 }
 

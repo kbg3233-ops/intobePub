@@ -21,7 +21,7 @@
 	text-combine-upright: var(--txt-up);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	[style*="--m-ft-c"] { color: var(--m-ft-c); }
 	[style*="--m-ft-s"] { font-size: var(--m-ft-s); }
 	[style*="--m-ft-w"] { font-weight: var(--m-ft-w); }

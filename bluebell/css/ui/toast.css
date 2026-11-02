@@ -15,9 +15,9 @@
 			color: var(--toast-ft-c);
 		}
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 720px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	/* Default */
-		[class*="toast-type"] { --toast-w: 100dvw; --toast-pd-x: 5vw; left: 0 !important; translate: 0; }
+		[class*="toast-type"] { --toast-w: 100dvw; --toast-pd-x: 5vmin; left: 0 !important; translate: 0; }
 		[class*="toast-type"] .p-toast-message {
 			background-color: var(--m-toast-bg-c, var(--toast-bg-c));
 			border-radius: var(--m-toast-bd-r, var(--toast-bd-r));

@@ -117,59 +117,59 @@
 		--trans-dft: .3s ease; /* 기본 트랜지션 */
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	:root {
 		/* Initialize */
-			--init-font-size: 3.33dvw; /* 글자 크기 */
-			--init-footer-height: 51.39dvw; /* 푸터 높이 */
-			--init-header-height: 15.56dvw; /* 헤더 높이 */
+			--init-font-size: 3.33dvmin; /* 글자 크기 */
+			--init-footer-height: 51.39dvmin; /* 푸터 높이 */
+			--init-header-height: 15.56dvmin; /* 헤더 높이 */
 			--init-layout-width: 100%; /* 페이지 넓이 */
-			--init-layout-padding: 5dvw; /* 레이아웃 안쪽 좌우 여백 */
+			--init-layout-padding: 5dvmin; /* 레이아웃 안쪽 좌우 여백 */
 
 		/* Background */
 			--bg-img: url('/bluebell/images/m_bg.png'); /* 배경 이미지 경로 */
 			--ic-c: url('/bluebell/images/m_common_icon.png'); /* 공통 아이콘 이미지 경로 */
 			--ic: url('/bluebell/images/m_icon.png'); /* 아이콘 이미지 경로 */
-			--bg-sz: 138.88vw; /* 이미지 스프라이트 크기 */
-			--bp-50: -6.94vw; /* 50 */
-			--bp-100: -13.89vw; /* 100 */
-			--bp-150: -20.83vw; /* 150 */
-			--bp-200: -27.78vw; /* 200 */
-			--bp-250: -34.72vw; /* 250 */
-			--bp-300: -41.67vw; /* 300 */
-			--bp-350: -48.61vw; /* 350 */
-			--bp-400: -55.56vw; /* 400 */
-			--bp-450: -62.50vw; /* 450 */
-			--bp-500: -69.44vw; /* 500 */
-			--bp-550: -76.39vw; /* 550 */
-			--bp-600: -83.33vw; /* 600 */
-			--bp-650: -90.28vw; /* 650 */
-			--bp-700: -97.22vw; /* 700 */
-			--bp-750: -104.17vw; /* 750 */
-			--bp-800: -111.11vw; /* 800 */
-			--bp-850: -118.06vw; /* 850 */
-			--bp-900: -125.00vw; /* 900 */
-			--bp-950: -131.94vw; /* 950 */
+			--bg-sz: 138.88vmin; /* 이미지 스프라이트 크기 */
+			--bp-50: -6.94vmin; /* 50 */
+			--bp-100: -13.89vmin; /* 100 */
+			--bp-150: -20.83vmin; /* 150 */
+			--bp-200: -27.78vmin; /* 200 */
+			--bp-250: -34.72vmin; /* 250 */
+			--bp-300: -41.67vmin; /* 300 */
+			--bp-350: -48.61vmin; /* 350 */
+			--bp-400: -55.56vmin; /* 400 */
+			--bp-450: -62.50vmin; /* 450 */
+			--bp-500: -69.44vmin; /* 500 */
+			--bp-550: -76.39vmin; /* 550 */
+			--bp-600: -83.33vmin; /* 600 */
+			--bp-650: -90.28vmin; /* 650 */
+			--bp-700: -97.22vmin; /* 700 */
+			--bp-750: -104.17vmin; /* 750 */
+			--bp-800: -111.11vmin; /* 800 */
+			--bp-850: -118.06vmin; /* 850 */
+			--bp-900: -125.00vmin; /* 900 */
+			--bp-950: -131.94vmin; /* 950 */
 
 		/* Form */
-			--fom-h: 12.5vw; /* 높이 */
-			--fom-br: 1.11vw; /* 보더 라디우스 */
-			--fom-fs: 3.89vw; /* 폰트 크기 */
-			--fom-pad: 3.33vw; /* 좌우 패딩 */
-			--fom-chk-ico-w: 3.06vw; /* 체크박스 아이콘 넓이 */
-			--fom-chk-ico-h: 2.36vw; /* 체크박스 아이콘 높이 */
-			--fom-rg-h: 0.56vw; /* Range Type 막대 크기 */
-			--fom-rg-thb-sz: 2.22vw; /* Range Type 슬라이더 크기 */
-			--fom-ta-h: 16.67vw; /* 텍스트 에어리어 높이 */
+			--fom-h: 12.5vmin; /* 높이 */
+			--fom-br: 1.11vmin; /* 보더 라디우스 */
+			--fom-fs: 3.89vmin; /* 폰트 크기 */
+			--fom-pad: 3.33vmin; /* 좌우 패딩 */
+			--fom-chk-ico-w: 3.06vmin; /* 체크박스 아이콘 넓이 */
+			--fom-chk-ico-h: 2.36vmin; /* 체크박스 아이콘 높이 */
+			--fom-rg-h: 0.56vmin; /* Range Type 막대 크기 */
+			--fom-rg-thb-sz: 2.22vmin; /* Range Type 슬라이더 크기 */
+			--fom-ta-h: 16.67vmin; /* 텍스트 에어리어 높이 */
 
 		/* Popup */
 			--pop-w: 100dvw; /* 팝업 기본 넓이 */
-			--pop-pad: 2vw; /* 팝업 좌우 여백 */
+			--pop-pad: 2vmin; /* 팝업 좌우 여백 */
 			--pop-max-h: 100dvh; /* 팝업 최대 높이 */
 			--pop-br: 0; /* 팝업 보더 라디우스 */
-			--pop-hh: 10.41vw; /* 팝업 헤더 높이 */
-			--pop-fh: 30.20vw; /* 팝업 푸터 높이 */
-			--pop-cont-top-pad: 4.17vw; /* 팝업 내용 위쪽 여백 */
-			--pop-cont-bot-pad: 4.17vw; /* 팝업 내용 아래쪽 여백 */
+			--pop-hh: 10.41vmin; /* 팝업 헤더 높이 */
+			--pop-fh: 30.20vmin; /* 팝업 푸터 높이 */
+			--pop-cont-top-pad: 4.17vmin; /* 팝업 내용 위쪽 여백 */
+			--pop-cont-bot-pad: 4.17vmin; /* 팝업 내용 아래쪽 여백 */
 	}
 }

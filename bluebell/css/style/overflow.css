@@ -5,7 +5,7 @@
 [style*="--ovf-x"] { white-space: nowrap; }
 [style*="--ovf-y"] { white-space: wrap; }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	[style*="--m-ovf"] {
 		overflow-x: var(--m-ovf-x, var(--m-ovf-a, var(--ovf-x, var(--ovf-a, visible))));
 		overflow-y: var(--m-ovf-y, var(--m-ovf-a, var(--ovf-y, var(--ovf-a, visible))));

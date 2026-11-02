@@ -106,38 +106,38 @@ body, #app {display:flex; flex-direction:column; place-content:space-between; fl
 	.f-wrap .f-menu { font-weight:700; }
 	.f-wrap .f-copy { font-size: 14px; color: #999; }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	/* Header */
 		.h-wrap { background: var(--bg-type01); }
-		.h-wrap .h-sub-tit { position: absolute; left: 50%; translate: -50%; display: flex; justify-content: center; align-items: center; height: 100%; font-size: 5vw; font-weight: 700; color: black;}
-		.h-wrap .h-logo img { width: 42.36vw; }
+		.h-wrap .h-sub-tit { position: absolute; left: 50%; translate: -50%; display: flex; justify-content: center; align-items: center; height: 100%; font-size: 5vmin; font-weight: 700; color: black;}
+		.h-wrap .h-logo img { width: 42.36vmin; }
 		.h-wrap .h-inner { display: flex; place-items: center; place-content: space-between; padding: 0 var(--init-layout-padding); }
 		.h-wrap .h-inner .h-left,
 		.h-wrap .h-inner .h-right { display: flex; place-items: center; }
 		.h-wrap .h-inner .h-btn { width: calc(var(--init-header-height) / 1.5); height: var(--init-header-height); display: flex; place-items: center; place-content: center; }
-		.h-wrap .h-menu { border-radius: 2.22vw; box-shadow: 0px 1.39vw 12.78vw 0px rgba(0, 0, 0, 0.07); padding: 5vw 5.56vw; font-size: 3.89vw; }
+		.h-wrap .h-menu { border-radius: 2.22vmin; box-shadow: 0px 1.39vmin 12.78vmin 0px rgba(0, 0, 0, 0.07); padding: 5vmin 5.56vmin; font-size: 3.89vmin; }
 
 	/* Header - Panel */
 		#panel { display: flex; flex-direction: column; place-content: space-between; position: fixed; left: 0; top: 0; background: white; width: 100dvw; height:100dvh; translate: 100% 0; transition: transform 0.3s ease;}
-		#panel .pn-head { flex: 0 0 45.14vw; background: white; border-bottom: 1px solid #e2e2e2; width: 100dvw; height: 45.14vw; padding: 18.06vw 5vw 0; }
-		#panel .user-camera-btn { right: -1.39vw; bottom: -2.08vw; }
-		#panel .user-thumb { width: 16.67vw; height: 16.67vw; }
+		#panel .pn-head { flex: 0 0 45.14vmin; background: white; border-bottom: 1px solid #e2e2e2; width: 100dvw; height: 45.14vmin; padding: 18.06vmin 5vmin 0; }
+		#panel .user-camera-btn { right: -1.39vmin; bottom: -2.08vmin; }
+		#panel .user-thumb { width: 16.67vmin; height: 16.67vmin; }
 		#panel .user-thumb img { width: 100%; height: 100%; border-radius: 50%; }
-		#panel .user-thumb .h-menu { top: 14.44vw; left: 9.56vw; }
-		#panel .user-thumb .h-menu * + * { margin-top: 1.39vw; }
-		#panel .pn-usrnm { font-size: 5vw; font-weight: bold; color: #000; }
-		#panel .pn-usrtm { margin-top: 1.94vw; font-size: 4.17vw; }
+		#panel .user-thumb .h-menu { top: 14.44vmin; left: 9.56vmin; }
+		#panel .user-thumb .h-menu * + * { margin-top: 1.39vmin; }
+		#panel .pn-usrnm { font-size: 5vmin; font-weight: bold; color: #000; }
+		#panel .pn-usrtm { margin-top: 1.94vmin; font-size: 4.17vmin; }
 		#panel .h-gnb { overflow: hidden; flex: 1; grid-template-columns: repeat(1, 1fr); place-items: flex-start; height: auto; }
 		#panel .h-gnb .h-od-menu { flex: unset; width: 100%; height: 100%; }
-		#panel .h-gnb .h-td-menu { display: grid; font-size: 3.33vw; padding: 0 2.78vw; }
-		#panel .h-gnb .h-td-menu > li > a { display: flex; align-items: center; height: 10vw; color: #767676; }
+		#panel .h-gnb .h-td-menu { display: grid; font-size: 3.33vmin; padding: 0 2.78vmin; }
+		#panel .h-gnb .h-td-menu > li > a { display: flex; align-items: center; height: 10vmin; color: #767676; }
 		#panel .h-gnb .h-td-menu > li > a:hover {color: #cc000c;}
 		#panel .h-gnb .h-td-menu > li.active > a {color: var(--main-color);}
-		#panel .h-gnb .h-td-menu > li.active > a:after {background-position: -90.28vw -6.94vw;transform: rotate(90deg);}
+		#panel .h-gnb .h-td-menu > li.active > a:after {background-position: -90.28vmin -6.94vmin;transform: rotate(90deg);}
 		#panel .h-gnb .h-td-menu > li.active .h-th-menu {display: block;}
 		#panel .pn-cls {position:absolute; right:0; top:0; width: var(--init-header-height); height: var(--init-header-height); }
-		#panel .pn-foot { height: 36.11vw; padding: 5.42vw 5.56vw 0; text-align: center; }
-		#panel .pn-foot .pn-copy {margin-top:3.75vw; font-size:3.33vw; color:#666;}
+		#panel .pn-foot { height: 36.11vmin; padding: 5.42vmin 5.56vmin 0; text-align: center; }
+		#panel .pn-foot .pn-copy {margin-top:3.75vmin; font-size:3.33vmin; color:#666;}
 
 	/* Header - Panel Active */
 		#panel.active { translate: 0 0; transition: transform 0.3s ease; }
@@ -155,14 +155,22 @@ body, #app {display:flex; flex-direction:column; place-content:space-between; fl
 		.h-wrap.main-header .h-logo { display: block; }
 
 	/* Container */
-		.sub-contents { padding: 8.33vw 0 13.89vw; }
-		[class*="sub-top"] .layout-inner { height: auto; padding: 5.56vw 5.56vw; }
-		[class*="sub-top"] .sub-tit { font-size: 5.56vw; }
-		[class*="sub-top"] .sub-tit-02 { font-size: 3.89vw; }
+		.sub-contents { padding: 8.33vmin 0 13.89vmin; }
+		[class*="sub-top"] .layout-inner { height: auto; padding: 5.56vmin 5.56vmin; }
+		[class*="sub-top"] .sub-tit { font-size: 5.56vmin; }
+		[class*="sub-top"] .sub-tit-02 { font-size: 3.89vmin; }
 		[class*="sub-top"] .page-loc { display: none; }
-		[class*="sub-top"] .btn-back { position: static; justify-self: flex-start; gap: 1.67vw; left: 0; top: 5.56vw; font-size: 3.33vw; }
+		[class*="sub-top"] .btn-back { position: static; justify-self: flex-start; gap: 1.67vmin; left: 0; top: 5.56vmin; font-size: 3.33vmin; }
 		.sub-top-bg-01 { display: none; }
 
 	/* Footer */
-		.f-wrap .f-copy { margin-top: 4.86vw; font-size: 3.89vw; }
+		.f-wrap .f-copy { margin-top: 4.86vmin; font-size: 3.89vmin; }
+}
+
+/* Header - Panel (landscape phone only: shrink pn-head/pn-foot to give h-gnb more room) */
+@media screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
+	#panel .pn-head { flex: 0 0 auto; height: auto; padding: 4vmin calc(var(--init-header-height) + 2vmin) 3vmin 5vmin; }
+	#panel .h-gnb { overflow-y: auto; }
+	#panel .pn-foot { height: auto; padding: 2.5vmin 5.56vmin 2vmin; }
+	#panel .pn-foot .pn-copy { margin-top: 1.5vmin; }
 }

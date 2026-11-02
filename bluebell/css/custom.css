@@ -1,3 +1,6 @@
+/* 기본 모드(한국어): 언어별 요소 표시/숨김 - .en 요소는 영문 모드에서만 표시 */
+.en { display: none !important; }
+
 /* Accordion */
 	[class*="aco-type-01"] {
 		--aco-item-gap-a: 24px;
@@ -93,6 +96,14 @@
 	.box-type-02-01 {
 		--box-pd-y: 20px;
 		--box-bd-r: 4px;
+		white-space: nowrap;
+	}
+
+	/* 영문 모드에서 텍스트 줄바꿈 허용 */
+	html[lang="en"] .box-type-02-01,
+	.en .box-type-02-01 {
+		white-space: normal;
+		word-break: keep-all;
 	}
 
 	.box-type-02-02 {
@@ -732,11 +743,11 @@
 		}
 
 		.mark-cir-03 {
-			--mark-bg-c: #003349;
+			--mark-bg-c: #666666;
 			--mark-w: 6px;
 			--mark-h: 6px;
 			--mark-ft-s: 18px;
-			--mark-ft-c: #003349;
+			--mark-ft-c: #666666;
 			--mark-gap-x: 9px;
 			--mark-gap-y: 40px;
 		}
@@ -757,8 +768,8 @@
 		[class*="mark-cir-04"] > *:before { translate: 0 10px; }
 
 		.mark-cir-04-02 {
-			--mark-bg-c: #003349;
-			--mark-ft-c: #003349;
+			--mark-bg-c: #666666;
+			--mark-ft-c: #666666;
 		}
 
 	/* Number */
@@ -969,13 +980,20 @@
 	[class*="tbl-type-01"] tbody th { border-bottom: 1px solid #e2e2e2; height: 67px; font-weight: 500; vertical-align: middle; color: black; }
 	[class*="tbl-type-01"] thead th { border-top: 1px solid #2d2d2d; }
 	[class*="tbl-type-01"] tbody th { padding: 21px 20px; }
-	[class*="tbl-type-01"] tbody td { border-bottom: 1px solid #e2e2e2; padding: 9px 20px; vertical-align: middle; color: #666; }
+	[class*="tbl-type-01"] tbody td { border-bottom: 1px solid #e2e2e2; padding: 9px 5px; vertical-align: middle; color: #666; }
 
 	.tbl-type-01-02 th, .tbl-type-01-02 td { height: 67px; }
 
 	.tbl-type-01-03 { margin-top: 12px; }
 	.tbl-type-01-03 thead th { height: 53px; padding-block: 0; }
 	.tbl-type-01-03 td { height: 53px; }
+
+	@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
+		.pop-prt .tbl-type-01-03 { table-layout: fixed !important; width: 100% !important; }
+		.pop-prt .tbl-type-01-03 col { width: 30% !important; }
+		.pop-prt .tbl-type-01-03 th { width: 30% !important; word-break: keep-all !important; white-space: normal !important; }
+		.pop-prt .tbl-type-01-03 td { width: 70% !important; word-break: break-word !important; }
+	}
 
 	.tbl-type-02 { border-collapse: separate; border-spacing: 0 10px; }
 	.tbl-type-02 th { font-weight: 400; }
@@ -1035,7 +1053,7 @@
 
 	.thumb-type-02 {
 		--thumb-bg-c: #f5f5f5;
-		--thumb-bg-img: url("/bluebell/images/img/img_thumb02.png");
+		--thumb-bg-img: url("/bluebell/images/img/user_default.png");
 		--thumb-ratio: 1 / 1;
 		--thumb-w: 90px;
 		--thumb-h: 90px;
@@ -1121,3 +1139,216 @@
 		.test-wrap table thead th:last-child, .test-wrap table tbody td:last-child{ border-left: 1px solid #e2e2e2; }
 		.test-wrap table tbody td:last-child { text-align: left; }
 		.test-wrap table tbody tr:last-child td { border-bottom: 0; }
+
+	/* 메인/서브 메뉴 정렬 (영문 메뉴 대응) */
+		.h-wrap .h-gnb { display: flex; flex: 1; }
+		.h-wrap .h-gnb > li { flex: 1; text-align: center; white-space: nowrap; }
+		.h-sub-menu-wrap .h-sub-menu { display: flex; flex: 1; }
+		.h-sub-menu-wrap .h-sub-menu > ul { flex: 1 !important; width: auto !important; text-align: center; }
+		.h-sub-menu-wrap .h-sub-menu > ul > li > a { white-space: nowrap; }
+
+	/* 역량진단 안내 문구 (영문 한 줄 처리) */
+		.diag-intro-notice { white-space: nowrap; padding-left: 10px !important; padding-right: 10px !important; font-size: 14px; }
+
+/* 영문 모드 대응 CSS */
+	/* 페이지 6: Learning Badge Guide - 단어 분리 방지 */
+		#badge .tbl-type-03 td { word-break: keep-all; }
+		#badge .tbl-type-03 td p { word-break: keep-all; }
+
+	/* 페이지 8: Advanced Search + 한줄 처리 */
+		.search-detail-btn { white-space: nowrap; }
+		button#searchDtlBtn.btn-type-lgry { white-space: nowrap !important; width: auto !important; min-width: 180px !important; padding: 0 20px !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; flex-direction: row !important; flex-wrap: nowrap !important; }
+		button#searchDtlBtn .ic-plus { display: inline-block !important; vertical-align: middle !important; width: 10px !important; height: 10px !important; min-width: 10px !important; min-height: 10px !important; flex-shrink: 0 !important; }
+		button#searchDtlBtn .ic-plus::before { display: block !important; width: 10px !important; height: 10px !important; }
+		.reg-cour-dtl-btn button.btn-type-lgry { white-space: nowrap !important; width: auto !important; min-width: 180px !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; flex-direction: row !important; flex-wrap: nowrap !important; }
+		.reg-cour-dtl-btn .btn-type-lgry { white-space: nowrap !important; width: auto !important; }
+
+	/* 페이지 11: Register for Course 팝업 - 이름/직급 처리 */
+		.pop-type-01 .user-name { white-space: nowrap; }
+		.pop-type-01 .user-position { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 150px; }
+
+	/* 페이지 12, 13, 17, 19: 탭 간격 조정 */
+		.tab-menu-01 li, .tab-menu-02 li { white-space: nowrap; padding: 0 8px; }
+		.tab-menu-01 li a, .tab-menu-02 li a { font-size: 18px; }
+		[class*="tab-menu-01"] > * { min-width: auto; padding: 0 20px; }
+		[class*="tab-menu-01"] > * > * { white-space: nowrap; }
+		[class*="tab-menu-01"] > * + * { margin-left: 10px; }
+
+	/* 페이지 13: 나의 수강 이력 (My Learning History) 그리드 라벨 줄바꿈 처리 */
+		.lst-type-01 { display: grid !important; grid-template-columns: repeat(6, 1fr) !important; gap: 8px !important; width: 100% !important; max-width: 100% !important; }
+		.lst-type-01 > * { min-height: 100px; height: auto; padding: 10px 4px; box-sizing: border-box; min-width: 0 !important; overflow: hidden; }
+		.lst-type-01 > * > p { font-size: 12px !important; line-height: 1.4 !important; text-align: center !important; word-break: keep-all !important; white-space: normal !important; min-height: 40px; display: flex !important; align-items: center; justify-content: center; padding: 0 4px; max-width: 90px !important; margin: 0 auto !important; }
+		.lst-type-01 strong { font-size: 20px; }
+
+	/* 페이지 14, 20: 테이블 컬럼 조정 */
+		.tbl-type-01 th, .tbl-type-01 td { word-break: keep-all; }
+		.tbl-type-02 th, .tbl-type-02 td { word-break: keep-all; }
+
+	/* 페이지 16, 17, 24: 버튼 너비 조정 */
+		[class*="btn-type"] { white-space: nowrap; padding-left: 15px; padding-right: 15px; }
+
+	/* 페이지 16: My Training Courses - Learning Completed 버튼 너비 및 정렬 (영문 대응) */
+		.sub-contents .box-type-01 [class*="btn-type-b"] { min-width: 170px !important; width: 170px !important; }
+		.sub-contents .box-type-01 > ul > li > div:last-child { --items-y: center !important; }
+		.sub-contents .box-type-01 > ul > li > div:last-child > div:last-child { --w: 170px !important; min-width: 170px !important; width: 170px !important; }
+	/* 페이지 16: 두 버튼(Reason + Enter)이 있을 때 세로 배치로 변경 */
+		.sub-contents li.box-type-01 > div > div:has([class*="btn-type-b"] + [class*="btn-type-b"]) { flex-direction: column !important; gap: 10px !important; }
+	/* 페이지 16: Assessment/Survey 페이지 - 버튼 컨테이너 정렬 (paperL.jsp) */
+		li.box-type-01 > div:last-child > div:last-child { --w: 170px !important; min-width: 170px !important; width: 170px !important; }
+
+	/* Approval History 페이지: 정보 영역과 버튼 영역 겹침 방지 */
+		li.box-type-01 > div:first-child { flex: 1; min-width: 0; }
+		li.box-type-01 > div:last-child { flex-shrink: 0; margin-left: 20px; }
+		li.box-type-01 .mark-v-bar-01 { display: flex; flex-wrap: wrap; gap: 5px 11px; }
+
+	/* 페이지 18: Language 항목 너비 조정 */
+		.form-inp-01 label { white-space: nowrap; min-width: auto; }
+
+	/* 페이지 20, 21: 테이블 말줄임 처리 */
+		.tbl-type-01 td.ellipsis-cell { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 200px; }
+
+	/* 페이지 22: Learning Progress 레이아웃 */
+		.studyroom-progress { word-break: keep-all; }
+		.studyroom-progress p { font-size: 14px; }
+
+	/* 페이지 23: Course Overview 너비 */
+		.course-overview-item { white-space: nowrap; }
+
+	/* 페이지 25: Assessment Date and Time 한줄 */
+		.exam-datetime { white-space: nowrap; }
+
+	/* 페이지 4: 메인 대시보드 - Competency Diagnosis Result 한줄 처리 */
+		.part-content { white-space: nowrap; }
+		.part-content a { white-space: nowrap; font-size: 14px; }
+
+	/* 페이지 7: Go 버튼과 화살표 한줄 처리 */
+		.main-bottom .box-type-06 a[class*="btn-type"] { flex-wrap: nowrap !important; gap: 5px; }
+		.main-bottom .box-type-06 a[class*="btn-type"] .ic-ur-arrow { flex-shrink: 0; }
+
+	/* 페이지 10: 차수정보(Session Information) 날짜 표시 - 영문 모드 대응 */
+		.box-type-01-02 .ccs-info-grid { display: flex; flex-wrap: wrap; gap: 24px; }
+		.box-type-01-02 .ccs-info-item { display: flex; flex-direction: column; gap: 4px; min-width: 180px; }
+		.box-type-01-02 .ccs-info-item .ccs-label { color: #666; font-size: 14px; white-space: nowrap; }
+		.box-type-01-02 .ccs-info-item .ccs-value { color: black; font-size: 14px; white-space: nowrap; }
+
+	/* Main Page: Notice/FAQ 영역 - View More 잘림 방지 (모바일) */
+		@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
+			/* 부모 컨테이너 width 제한 - layout-inner 패딩(좌우 25px)을 고려 */
+			div[style*="--grid-col: 4"]:has(.main-notice-faq) {
+				max-width: calc(100vw - 50px) !important;
+				width: calc(100vw - 50px) !important;
+				overflow: hidden !important;
+			}
+			.main-notice-faq {
+				max-width: calc(100vw - 50px) !important;
+				width: calc(100vw - 50px) !important;
+				overflow: hidden !important;
+			}
+			.main-notice-faq > li {
+				max-width: calc(100vw - 50px) !important;
+				width: calc(100vw - 50px) !important;
+				overflow: hidden !important;
+			}
+			.main-notice-faq .part-content {
+				max-width: calc(100vw - 50px) !important;
+				width: calc(100vw - 50px) !important;
+				overflow: hidden !important;
+			}
+			.main-notice-faq .part-content > div {
+				max-width: calc(100vw - 50px) !important;
+				width: calc(100vw - 50px) !important;
+				flex-wrap: nowrap !important;
+				overflow: hidden !important;
+				gap: 10px !important;
+			}
+			.main-notice-faq .btn-lnk {
+				flex-shrink: 0 !important;
+				white-space: nowrap !important;
+			}
+			.main-notice-faq .swiper-type-04 {
+				flex: 1 1 0 !important;
+				min-width: 0 !important;
+				overflow: hidden !important;
+			}
+			.main-notice-faq .tit-04 {
+				flex-shrink: 0 !important;
+				min-width: 50px !important;
+				width: auto !important;
+			}
+
+			/* Main Page: My Learning Status 영역 - 숫자 오버플로우 방지 */
+			.box-type-05 {
+				padding-left: 15px !important;
+				padding-right: 15px !important;
+				max-width: calc(100vw - 50px) !important;
+				box-sizing: border-box !important;
+			}
+			.main-learning-stat {
+				display: grid !important;
+				grid-template-columns: 1fr 1fr !important;
+				gap: 10px 15px !important;
+				max-width: 100% !important;
+				width: 100% !important;
+			}
+			.main-learning-stat li {
+				max-width: 100% !important;
+				overflow: hidden !important;
+			}
+			.main-learning-stat li .part-content a {
+				font-size: 3.2vmin !important;
+				white-space: nowrap !important;
+				overflow: hidden !important;
+				text-overflow: ellipsis !important;
+			}
+			/* 마이픽 버튼 모바일 줄바꿈 */
+			.outedu-btn-wrap {
+				display: flex !important;
+				flex-wrap: wrap !important;
+				gap: 8px !important;
+				justify-content: flex-end !important;
+			}
+			.outedu-btn-wrap a,
+			.outedu-btn-wrap button {
+				flex-shrink: 0 !important;
+			}
+		}
+
+/* date/month input placeholder override */
+.date-placeholder-wrap {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+.date-placeholder-wrap input[type="month"]::-webkit-datetime-edit-text,
+.date-placeholder-wrap input[type="month"]::-webkit-datetime-edit-month-field,
+.date-placeholder-wrap input[type="month"]::-webkit-datetime-edit-year-field,
+.date-placeholder-wrap input[type="date"]::-webkit-datetime-edit-text,
+.date-placeholder-wrap input[type="date"]::-webkit-datetime-edit-month-field,
+.date-placeholder-wrap input[type="date"]::-webkit-datetime-edit-year-field,
+.date-placeholder-wrap input[type="date"]::-webkit-datetime-edit-day-field {
+	color: transparent;
+}
+.date-placeholder-wrap::before {
+	content: attr(data-placeholder);
+	position: absolute;
+	left: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #999;
+	pointer-events: none;
+	font-size: 14px;
+}
+.date-placeholder-wrap.has-value::before {
+	color: #222;
+}
+
+/* 게시판 본문(CKEditor 콘텐츠) 스타일 복원 — common.css 글로벌 리셋 override */
+.editor-cont em { color: inherit; font-style: italic; }
+.editor-cont strong { font-weight: 700; }
+.editor-cont b { font-weight: bold; }
+.editor-cont ul { list-style-type: disc; padding-left: 1.5em; }
+.editor-cont ol { list-style-type: decimal; padding-left: 1.5em; }
+.editor-cont li { list-style: inherit; }
+.editor-cont p { margin-bottom: 0.5em; }
+.editor-cont h1, .editor-cont h2, .editor-cont h3,
+.editor-cont h4, .editor-cont h5, .editor-cont h6 { font-weight: bold; font-size: revert; margin-bottom: 0.5em; }

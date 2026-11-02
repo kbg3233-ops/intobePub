@@ -58,7 +58,7 @@
 			transform: translateY(calc(50% - var(--grp-w) / 2));
 		}
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	/* Initialize */
 		[class*="grp-type-h"] {
 			--m-grp-back-bg-c: var(--grp-back-bg-c);

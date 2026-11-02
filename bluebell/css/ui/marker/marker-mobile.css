@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	/* Initialize */
 		[class*="mark-"] {
 			--m-mark-dp: var(--mark-dp);
@@ -27,7 +27,7 @@
 
 		[class*="mark-v-bar"] {
 			--mark-w: 1px;
-			--mark-h: 2.5vw;
+			--mark-h: 2.5vmin;
 		}
 
 		[class*="mark-h-bar"] {
@@ -37,17 +37,17 @@
 
 		[class*="mark-cir"] {
 			--mark-bd-r: 50%;
-			--mark-w: 2.5vw;
-			--mark-h: 2.5vw;
+			--mark-w: 2.5vmin;
+			--mark-h: 2.5vmin;
 		}
 
 		[class*="mark-squ"] {
-			--mark-w: 2.5vw;
-			--mark-h: 2.5vw;
+			--mark-w: 2.5vmin;
+			--mark-h: 2.5vmin;
 		}
 
 		[class*="mark-hyp"] {
-			--mark-w: 1.5vw;
+			--mark-w: 1.5vmin;
 			--mark-h: 1px;
 		}
 
@@ -57,20 +57,20 @@
 		}
 
 		[class*="mark-arrow"] {
-			--mark-w: 1.5vw;
-			--mark-h: 1.5vw;
+			--mark-w: 1.5vmin;
+			--mark-h: 1.5vmin;
 			--mark-rotate: 135deg;
 		}
 
 		[class*="mark-slash"] {
 			--mark-w: 1px;
-			--mark-h: 2.5vw;
+			--mark-h: 2.5vmin;
 			--mark-rotate: 135deg;
 		}
 
 		[class*="mark-dia"] {
-			--mark-w: 2.5vw;
-			--mark-h: 2.5vw;
+			--mark-w: 2.5vmin;
+			--mark-h: 2.5vmin;
 			--mark-rotate: 45deg;
 		}
 

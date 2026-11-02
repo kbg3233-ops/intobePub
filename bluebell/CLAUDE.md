@@ -13,8 +13,9 @@
 ## 로컬 서버 / 확인 주소
 
 - Tomcat: `C:\tools\apache-tomcat-10.1.61` (Downloads의 Tomcat 폴더는 비어 있음)
-- `conf/Catalina/localhost/ROOT.xml` → `<Context docBase="C:/work/Intobe" />` (ROOT 컨텍스트)
-- 주소 = `http://localhost:8080/` + `C:\work\Intobe` 아래 경로. **`/Intobe`를 붙이면 404**
+- `conf/Catalina/localhost/ROOT.xml` → `<Context docBase="C:/work/_backup/Intobe_261102/Intobe" />` (ROOT 컨텍스트, 2026-11-02 변경. 이전 `C:/work/Intobe`)
+- 주소 = `http://localhost:8080/` + docBase 아래 경로. **`/Intobe`를 붙이면 404**
+- 켜기: `JAVA_HOME=C:\Program Files\Java\jdk-27.0.1.0.3` 설정 후 `bin\catalina.bat run` (startup.bat은 명령 창이 닫히면 같이 꺼짐)
   - PC 메인: http://localhost:8080/bluebell/page/main.jsp
   - PC path: http://localhost:8080/bluebell/path/
   - 앱 path: http://localhost:8080/bluebell/app/path/
@@ -48,7 +49,27 @@ PNG 시안(`알림.png`) 기준. 커밋 `13a1794`, `d7c6963`.
 - 모바일 폭(768px 이하)에서는 기존 `page/popup/m-alarm.jsp`(`mobile-alarm`)가 뜸. 이번 수정 미적용.
 - PC 본문 제목(블루벨님, My 학습현황 등)과 사용자 팝업 이름은 아직 명조. PC 전체 Pretendard 전환 여부 미정.
 
-## 운영 소스 동기화 (2026-10-30, 미완료 — 회사 컴퓨터에서 이어서)
+## 운영 소스 동기화 (2026-11-02 완료)
+
+운영 소스(`C:\work\bluebell`)의 `member/src/main/webapp/resources/`(css·js·images)를 퍼블 `bluebell/`에 3-way로 합침. 커밋 "[부루벨에듀] 운영 소스 동기화".
+
+- 역할: 퍼블은 이 소스만 수정. 운영(`resources/`, `WEB-INF/views`)으로 옮기는 건 개발자 몫
+- purestar = 퇴사한 선임 퍼블. bg = 현재 사용자
+- 가져온 것: JH 휴대폰 가로대응(css 38개 + `front.js`), hhkim 마크 색 `#666666`, nskim 모바일·표·탭 수정, sujin 배지 `--badge-scale`, Bluebell Edu 로고 등 이미지 7개, "Smart BBK → Bluebell Edu" 문구 2곳
+- 운영 경로(`/resources/images`, `../images`)는 퍼블 경로(`/bluebell/images`)로 되돌림. `front.js` 로고 경로는 `contextPath` 없이 유지(퍼블에 없음)
+- `front.js` 초기화(팝업·툴팁·별점 등)는 운영처럼 켬 (사용자 결정)
+- 모바일 `.main-learning-stat` 값은 퍼블 유지(선임이 `main.jsp`에서 css로 옮긴 값, 단위만 vmin)
+- `css/en.css`: 운영 영문 모드 css 참고용 복사. 페이지에 연결 안 함
+- 안 가져온 것: `dev.css`, `common.js`, 운영 전용 라이브러리·샘플 이미지
+- 선임 작업 중 운영에 빠진 것(개발자에게 전달): `c8bd243`의 탭 버튼 좌우 여백 20px(운영 0), PC My 학습현황 글자 15px·자간 -1px
+- 운영 헤더 메뉴는 DB에서 이름을 불러오고, 하위 메뉴 폭은 `handleMenuWidth` 스크립트가 정함 (`WEB-INF/views/layout/header.jsp`)
+
+### 동기화 후 확인할 점 (운영과 같게 두기로 함)
+
+- `custom.css` "메인/서브 메뉴 정렬 (영문 메뉴 대응)"(nskim): 대메뉴가 같은 폭으로 나뉘고, `.h-sub-menu > ul { width: auto !important }`가 **하위 메뉴 `--w`를 무시**함 → 헤더 메뉴 작업 시 이 규칙 기준으로 맞출 것
+- `.part-content { white-space: nowrap }`, `.part-content a { font-size: 14px }`(nskim): PC 메인 공지/FAQ 줄에서 FAQ 쪽 "더보기"가 영역 밖으로 밀림 → 따로 손볼 것
+
+## (기록) 운영 소스 동기화 계획 (2026-10-30)
 
 작업 전에 운영 소스와 동기화해야 했는데, 10/27~10/30 작업 후에 알게 됨. 운영 소스와 지금 소스가 다를 수 있음.
 

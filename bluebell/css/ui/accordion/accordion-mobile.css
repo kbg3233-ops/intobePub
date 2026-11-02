@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	/* Initialize */
 		[class*="aco-type"] {
 			/* Default */
@@ -31,8 +31,8 @@
 			/* Head - Icon */
 				--m-aco-bp-x: var(--aco-bp-x);
 				--m-aco-bp-y: var(--aco-bp-y);
-				--m-aco-icon-w: 3.33vw;
-				--m-aco-icon-h: 1.94vw;
+				--m-aco-icon-w: 3.33vmin;
+				--m-aco-icon-h: 1.94vmin;
 
 			/* Content */
 				--m-aco-cont-bg-c: var(--aco-cont-bg-c);

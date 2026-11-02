@@ -41,7 +41,7 @@
 			[class*="t-tip"].p-tooltip-bottom { margin-top: var(--tip-gap, 20px); }
 			[class*="t-tip"].p-tooltip-bottom .p-tooltip-arrow { translate: -50% calc(var(--tip-arrow-h) * -1); }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 720px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	/* Wrap */
 		[class*="t-tip"] {
 			position: fixed;

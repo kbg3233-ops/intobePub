@@ -1,0 +1,865 @@
+header .h-gnb-bg {height:660px;}
+
+/* 영문 모드: 언어별 요소 표시/숨김 */
+.ko { display: none !important; }
+.en { display: block !important; }
+img.en { display: inline-block !important; }
+
+/* 영문 모드: 서브메뉴가 메인메뉴와 정렬되도록 flex 사용 */
+.h-wrap .h-gnb { display: flex; flex: 1; }
+.h-wrap .h-gnb > li { flex: 1; text-align: center; }
+.h-sub-menu-wrap .h-sub-menu { display: flex; flex: 1; }
+.h-sub-menu-wrap .h-sub-menu > ul { flex: 1 !important; width: auto !important; text-align: center; }
+.h-sub-menu-wrap .h-sub-menu > ul:nth-child(1) { padding-left: 40px; }
+.h-sub-menu-wrap .h-sub-menu > ul:nth-child(2) { padding-left: 30px; }
+.h-sub-menu-wrap .h-sub-menu > ul:nth-child(4) { margin-left: -10px; }
+.h-sub-menu-wrap .h-sub-menu > ul:nth-child(5) { margin-left: -30px; }
+.h-sub-menu-wrap .h-sub-menu > ul:nth-child(6) { margin-left: 20px; }
+
+[class*="brd-lst02"] .brd-btn > [class*="btn-"] {width:230px;}
+[class*="inp-file"] label {flex:0 0 125px;}
+[class*="bage-04"] {width:70px; height:70px; font-size:12px;}
+
+/* courseL.do 탭 메뉴 - 영문 텍스트 잘림 방지 */
+.tab-scroll-menu .tab-menu-01 {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+.tab-scroll-menu .tab-menu-01 li {
+    flex: 0 0 auto !important;
+}
+.tab-scroll-menu .tab-menu-01 li a {
+    white-space: nowrap !important;
+    padding: 0 15px !important;
+    font-size: 14px !important;
+}
+
+/* Page 16: My Training Courses - 버튼 너비 조정 */
+/*.brd-wrap [class*="btn-type-b"],
+.sub-contents [class*="btn-type-b"] {
+    min-width: 180px !important;
+    white-space: nowrap !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+}*/
+
+/* Page 16: My Training Courses - 두 버튼(Reason + Enter)이 있을 때 세로 배치로 변경 */
+.sub-contents li.box-type-01 > div > div:has([class*="btn-type-b"] + [class*="btn-type-b"]) {
+    flex-direction: column !important;
+    gap: 10px !important;
+    min-width: 200px !important;
+}
+
+/* Page 16: 두 버튼 컨테이너 내 버튼 너비 조정 */
+.sub-contents li.box-type-01 > div > div:has([class*="btn-type-b"] + [class*="btn-type-b"]) [class*="btn-type-b"] {
+    min-width: 180px !important;
+    width: 100% !important;
+}
+
+/* Page 17: MyPick Course - 버튼 컨테이너 너비 조정 */
+.sub-contents ul li.box-type-01 > div[style*="--w: 124px"] {
+    --w: 180px !important;
+    min-width: 180px !important;
+}
+.sub-contents ul li.box-type-01 > div > div[style*="--w: 124px"] {
+    --w: 180px !important;
+    min-width: 180px !important;
+}
+
+/* Page 17: MyPick Course - 완료과정 오른쪽 컨테이너 세로 배치 (버튼 오버플로우 방지) */
+.sub-contents li.box-type-01 > div:last-child > div[style*="--gap-x: 20px"] {
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 8px !important;
+}
+
+/* Page 17: MyPick Course - 버튼 컨테이너가 카드 안에 맞도록 조정 */
+.sub-contents li.box-type-01 > div:last-child > div[style*="--dp: grid"] {
+    width: auto !important;
+    min-width: auto !important;
+}
+
+/* Page 18: MyPick Course Creation - 테이블 th 너비 조정 */
+.sub-contents .tbl-type-01 th {
+    white-space: nowrap !important;
+    min-width: 160px !important;
+}
+
+/* Page 21: View My Team - 탭 메뉴 스크롤 처리 */
+.tab-scroll-02 .tab-menu-03 {
+    flex-wrap: nowrap !important;
+}
+.tab-scroll-02 .tab-menu-03 li a {
+    white-space: nowrap !important;
+    padding: 0 12px !important;
+}
+
+/* Page 22: Learning Progress (학습방) - 텍스트 레이아웃 조정 */
+.studyroom-stat {
+    --mark-grid-t-col: 3 !important;
+}
+.studyroom-stat .part-cont {
+    min-width: 160px !important;
+    padding: 20px 25px !important;
+}
+.studyroom-stat .part-cont-in {
+    white-space: nowrap !important;
+    font-size: 14px !important;
+    gap: 10px !important;
+}
+.studyroom-stat .part-cont-in span {
+    font-size: 14px !important;
+}
+.studyroom-stat .btn-sz-02 {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+    min-width: auto !important;
+    white-space: nowrap !important;
+}
+.grp-h-01-wrap .part-label {
+    white-space: nowrap !important;
+    min-width: 130px !important;
+    font-size: 13px !important;
+}
+
+/* Page 23: Course Overview (과정정보) - th 너비 및 텍스트 조정 */
+.sub-contents .tbl-type-02 colgroup col[style*="--w: 125px"] {
+    --w: 180px !important;
+}
+.sub-contents .tbl-type-02 th {
+    white-space: nowrap !important;
+}
+
+/* Approval Information popup - table layout fix for mobile */
+#paymentinfo .tbl-type-01-03 {
+    table-layout: fixed !important;
+    width: 100% !important;
+}
+#paymentinfo .tbl-type-01-03 th {
+    width: 30% !important;
+    word-break: keep-all !important;
+    white-space: normal !important;
+}
+#paymentinfo .tbl-type-01-03 td {
+    width: 70% !important;
+    word-break: break-word !important;
+}
+[class*="tbl-type"] th {
+    word-break: keep-all !important;
+}
+
+/* Training Structure & Training Evaluation - 상단 설명 텍스트 오버플로우 수정 */
+.sub-contents .box-type-02-01 {
+    word-wrap: break-word !important;
+    word-break: keep-all !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+}
+
+/* Training Structure & Training Evaluation - 리스트 항목 텍스트 오버플로우 수정 */
+.sub-contents .mark-cir-03 .box-type-01-02,
+.sub-contents .mark-cir-03 .box-type-01-02 li,
+.sub-contents .mark-cir-04 li {
+    word-wrap: break-word !important;
+    word-break: keep-all !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+}
+
+/* Training Structure - My Pick 레이아웃 수정 (Page 4) */
+.sub-contents .mark-cir-03 {
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+.sub-contents .mark-cir-03 > li {
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+.sub-contents .mark-cir-03 .part-content {
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+.sub-contents .mark-num-01 li {
+    word-wrap: break-word !important;
+    word-break: keep-all !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+}
+.sub-contents .mark-hyp-01-02 li {
+    word-wrap: break-word !important;
+    word-break: keep-all !important;
+    white-space: normal !important;
+}
+
+/* Main Page: My Learning Status 영역 - 학습현황 항목 레이아웃 조정 */
+.main-learning-stat {
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+.main-learning-stat li {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+}
+.main-learning-stat li .part-content a {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 5px !important;
+    white-space: nowrap !important;
+    font-size: 14px !important;
+}
+.main-learning-stat li .part-content a strong {
+    margin-left: 5px !important;
+}
+
+/* Main Page: Notice/FAQ 영역 - View More 잘림 방지 */
+.main-notice-faq {
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+.main-notice-faq > li {
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+.main-notice-faq .part-content {
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+.main-notice-faq .part-content > div {
+    max-width: 100% !important;
+    flex-wrap: nowrap !important;
+    overflow: hidden !important;
+}
+.main-notice-faq .btn-lnk {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+}
+.main-notice-faq .swiper-type-04 {
+    flex: 1 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Page 6: 진단결과 페이지 - 테이블 컬럼 너비 및 줄바꿈 수정 */
+.sub-contents .tbl-type-04 {
+    table-layout: auto !important;
+}
+.sub-contents .tbl-type-04 th {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    min-width: 90px !important;
+    font-size: 13px !important;
+    padding: 10px 8px !important;
+}
+.sub-contents .tbl-type-04 td {
+    word-break: keep-all !important;
+    font-size: 13px !important;
+    padding: 10px 8px !important;
+}
+/* 역량구분/세부역량 컬럼 너비 확장 */
+.sub-contents .tbl-type-04 colgroup col:nth-child(1),
+.sub-contents .tbl-type-04 colgroup col:nth-child(2) {
+    width: 140px !important;
+    min-width: 140px !important;
+}
+/* GAP 컬럼 너비 확장 */
+.sub-contents .tbl-type-04 th:has(br),
+.sub-contents .tbl-type-04 colgroup col[style*="--w: 130px"] {
+    width: 150px !important;
+    min-width: 150px !important;
+}
+
+/* 모바일 (768px 이하) - white-space: nowrap 해제 */
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
+    /* 모바일 메뉴 패널이 화면을 넘지 않도록 body overflow 설정 */
+    body {
+        overflow-x: hidden !important;
+    }
+
+    /* courseL.do 탭 메뉴 - 모바일에서 스크롤 가능하게 */
+    .tab-scroll-menu {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        margin: 0 -4vmin !important;
+        padding: 0 4vmin !important;
+    }
+    .tab-scroll-menu .tab-menu-01 {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        min-width: max-content !important;
+    }
+    .tab-scroll-menu .tab-menu-01 li {
+        flex: 0 0 auto !important;
+    }
+    .tab-scroll-menu .tab-menu-01 li a {
+        white-space: nowrap !important;
+        padding: 0 3vmin !important;
+        font-size: 3.2vmin !important;
+    }
+
+    /* Page 22: 모바일에서 줄바꿈 허용 */
+    .studyroom-stat .part-cont-in {
+        white-space: normal !important;
+        font-size: 3.33vmin !important;
+    }
+    .studyroom-stat .btn-sz-02 {
+        white-space: normal !important;
+        font-size: 2.78vmin !important;
+        padding: 1.39vmin 2.22vmin !important;
+    }
+    .grp-h-01-wrap .part-label {
+        white-space: normal !important;
+        min-width: auto !important;
+        font-size: 3.33vmin !important;
+    }
+
+    /* Main Page: 모바일에서 My Learning Status 세로 배치 */
+    .main-learning-stat {
+        --mark-grid-t-col: 2 !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 2vmin 3vmin !important;
+    }
+    .main-learning-stat li {
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+    .main-learning-stat li .part-content {
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+    .main-learning-stat li .part-content a {
+        font-size: 2.8vmin !important;
+        justify-content: flex-start !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        display: block !important;
+        max-width: 100% !important;
+    }
+    .main-learning-stat li .part-content a strong {
+        font-size: 2.8vmin !important;
+    }
+
+    /* Main Page: 모바일에서 Notice/FAQ 레이아웃 조정 */
+    .main-notice-faq {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 3vmin !important;
+    }
+    .main-notice-faq > li {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .main-notice-faq li .part-content > div {
+        display: grid !important;
+        grid-template-columns: auto 1fr auto !important;
+        align-items: center !important;
+        gap: 3vmin !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 0 2vmin !important;
+    }
+    .main-notice-faq .tit-04 {
+        flex: 0 0 auto !important;
+        min-width: auto !important;
+        width: auto !important;
+        font-size: 3.2vmin !important;
+        white-space: nowrap !important;
+    }
+    .main-notice-faq .swiper-type-04 {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+    .main-notice-faq .swiper-type-04 a {
+        display: block !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        max-width: 100% !important;
+    }
+    .main-notice-faq .btn-lnk {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+        font-size: 2.8vmin !important;
+    }
+}
+
+/* Page 12: Approval 페이지 - 단어 분리 방지 */
+.sub-contents .tbl-type-01 th,
+.sub-contents .tbl-type-01 td,
+.sub-contents .tbl-type-02 th,
+.sub-contents .tbl-type-02 td,
+.sub-contents .tbl-type-03 th,
+.sub-contents .tbl-type-03 td {
+    word-break: keep-all !important;
+}
+.sub-contents .brd-wrap .chip-type-01,
+.sub-contents .brd-wrap .chip-type-02,
+.sub-contents [class*="chip-type-"] {
+    white-space: nowrap !important;
+}
+
+/* Approval Status chips - 텍스트 잘림 방지 */
+.sub-contents .brd-lst-01 .brd-meta span,
+.sub-contents .brd-wrap .mark-v-bar-01 span {
+    white-space: nowrap !important;
+}
+
+/* 결재 테이블 헤더 - 줄바꿈 방지 */
+.sub-contents .tbl-type-01-03 th,
+.sub-contents .tbl-type-01-03 td {
+    word-break: keep-all !important;
+    white-space: nowrap !important;
+}
+
+/* Training Structure - MyPick Language Training 박스 오버플로우 수정 (모바일 영문) */
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
+    /* 전체 레이아웃 너비 제한 */
+    .sub-contents .layout-inner {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        overflow-x: clip !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* tab-wrap, tab-cont 너비 제한 */
+    .sub-contents .tab-wrap,
+    .sub-contents .tab-cont,
+    .sub-contents .tab-cont > div {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    /* mark-cir-03 리스트 및 하위 요소 너비 제한 */
+    .sub-contents .mark-cir-03,
+    .sub-contents .mark-cir-03 > li,
+    .sub-contents .mark-cir-03 .part-content {
+        max-width: calc(100vw - 50px) !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+        word-wrap: break-word !important;
+    }
+
+    /* box-type-01-02 박스가 화면을 벗어나지 않도록 */
+    .sub-contents .box-type-01-02 {
+        max-width: calc(100vw - 80px) !important;
+        width: calc(100vw - 80px) !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+        padding: 15px !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+    }
+
+    /* box-type-01-02 내부 모든 요소 */
+    .sub-contents .box-type-01-02 * {
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        white-space: normal !important;
+    }
+
+    /* 내부 리스트 항목 오버플로우 처리 */
+    .sub-contents .mark-num-01,
+    .sub-contents .mark-hyp-01-02 {
+        max-width: 100% !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .sub-contents .mark-num-01 li,
+    .sub-contents .mark-hyp-01-02 li {
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+    }
+
+    /* q 태그 (※ 참고사항) 줄바꿈 처리 */
+    .sub-contents .box-type-01-02 q {
+        display: block !important;
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+        white-space: normal !important;
+    }
+
+    /* part-content 내 div 너비 제한 */
+    .sub-contents .mark-cir-03 .part-content > div {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    /* Diagnosis 페이지 - 탭 메뉴 두 탭 화면에 모두 표시 */
+    .tab-wrap .tab-menu-02 {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .tab-wrap .tab-menu-02 li {
+        flex: 1 1 50% !important;
+        min-width: 0 !important;
+    }
+    .tab-wrap .tab-menu-02 li button {
+        white-space: nowrap !important;
+        padding: 10px 8px !important;
+        font-size: 12px !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    /* Search/Apply 페이지 - swiper pagination 오버플로우 숨김 */
+    .swiper-type-01 .swiper-pagination-01 {
+        max-width: calc(100vw - 50px) !important;
+        overflow: hidden !important;
+        justify-content: flex-end !important;
+    }
+
+    /* My content 페이지 - 탭 스크롤 처리 */
+    .tab-scroll-menu .tab-menu-01 {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        padding-bottom: 5px !important;
+    }
+    .tab-scroll-menu .tab-menu-01::-webkit-scrollbar {
+        display: none !important;
+    }
+    .tab-scroll-menu .tab-menu-01 li {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+    }
+    .tab-scroll-menu .tab-menu-01 li a {
+        font-size: 13px !important;
+        padding: 8px 12px !important;
+    }
+
+    /* My content 페이지 - 정렬 옵션 스크롤 처리 */
+    .sub-contents .mark-v-bar-01 {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        max-width: 100% !important;
+    }
+    .sub-contents .mark-v-bar-01 li {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+    }
+    .sub-contents .mark-v-bar-01 .part-slt-txt {
+        font-size: 12px !important;
+        padding: 5px 8px !important;
+    }
+
+    /* My Learning history 페이지 - Course Completion Status 리스트 수정 */
+    #m-inHouseEduBody .box-type-01,
+    #m-myPickEduBody .box-type-01 {
+        max-width: calc(100vw - 50px) !important;
+        overflow: hidden !important;
+    }
+    #m-inHouseEduBody li.box-type-01 > div,
+    #m-myPickEduBody li.box-type-01 > div {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    #m-inHouseEduBody .mark-v-bar-01,
+    #m-myPickEduBody .mark-v-bar-01 {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 8px 15px !important;
+        width: 100% !important;
+    }
+    #m-inHouseEduBody .mark-v-bar-01 span,
+    #m-myPickEduBody .mark-v-bar-01 span {
+        font-size: 12px !important;
+        white-space: normal !important;
+        word-break: keep-all !important;
+        display: flex !important;
+        flex-direction: column !important;
+        min-width: 100px !important;
+    }
+    #m-inHouseEduBody .mark-v-bar-01 span b,
+    #m-myPickEduBody .mark-v-bar-01 span b {
+        display: block !important;
+        font-size: 13px !important;
+        margin-top: 2px !important;
+        word-break: break-word !important;
+    }
+
+    /* Approval History 페이지 - 탭 스크롤 처리 */
+    .tab-wrap .tab-menu-01 {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+    }
+    .tab-wrap .tab-menu-01::-webkit-scrollbar {
+        display: none !important;
+    }
+    .tab-wrap .tab-menu-01 li {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+    }
+    .tab-wrap .tab-menu-01 li a {
+        font-size: 13px !important;
+        padding: 8px 10px !important;
+    }
+
+    /* Approval History 페이지 - 정렬 옵션 폰트 크기 축소 */
+    .form-slt-btn-tran label.part-slt-txt {
+        font-size: 11px !important;
+        white-space: nowrap !important;
+    }
+
+    /* Approval 팝업 - 테이블 레이아웃 수정 */
+    .tbl-type-01-03 {
+        table-layout: fixed !important;
+        width: 100% !important;
+    }
+    .tbl-type-01-03 th,
+    .tbl-type-01-03 td {
+        word-break: break-word !important;
+        white-space: normal !important;
+    }
+    .tbl-type-01-03 th {
+        width: 35% !important;
+        min-width: 100px !important;
+    }
+    .tbl-type-01-03 td {
+        width: 65% !important;
+    }
+
+    /* 전체 페이지 - 제목과 탭 메뉴 사이 간격 축소 */
+    [class*="sub-top"] .layout-inner {
+        padding: 10px 5.56vmin !important;
+    }
+    .sub-contents {
+        padding-top: 10px !important;
+    }
+    [class*="sub-top"] {
+        min-height: auto !important;
+    }
+
+    /* 탭 메뉴 sticky top 값 제거 - 간격 원인 */
+    .tab-wrap {
+        position: static !important;
+        top: auto !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* 탭 메뉴 전체 너비 및 균등 분할 */
+    .sub-contents .tab-wrap ul.tab-menu-01 {
+        display: flex !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .sub-contents .tab-wrap ul.tab-menu-01 > li {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        max-width: 50% !important;
+        text-align: center !important;
+        display: flex !important;
+        justify-content: center !important;
+        list-style: none !important;
+    }
+    .sub-contents .tab-wrap ul.tab-menu-01 > li > a {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        padding: 10px 5px !important;
+    }
+
+    /* 탭과 콘텐츠 영역 간격 */
+    .tab-wrap + .brd-wrap {
+        margin-top: 15px !important;
+    }
+
+    /* 버튼 영역 스타일 */
+    .brd-wrap form > div {
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+    .brd-wrap .btn-type-dblu,
+    .brd-wrap .btn-type {
+        font-size: 12px !important;
+        padding: 8px 12px !important;
+        white-space: nowrap !important;
+    }
+
+    /* 1. diagIntro.do - 상단 탭 버튼 가운데 정렬 */
+    .layout-inner:has(> .tab-wrap > .tab-menu-02) {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .layout-inner > .tab-wrap:has(.tab-menu-02) {
+        width: auto !important;
+    }
+    .tab-wrap ul.tab-menu-02 {
+        display: flex !important;
+        justify-content: center !important;
+        width: auto !important;
+    }
+    .tab-wrap ul.tab-menu-02 > li {
+        flex: none !important;
+    }
+
+    /* 2. applyL.do - Best 스와이퍼 페이지네이션 수정 */
+    /* 너무 많은 bullet이 있을 때 숨김 처리 */
+    .swiper-pagination-01 {
+        display: none !important;
+    }
+    /* 또는 5개 이하일 때만 표시하려면 JS로 처리 필요 */
+
+    /* 3. eduSys.do - In-house Training 라벨 오버플로우 방지 */
+    .tab-wrap ul.tab-menu-02 > li button,
+    .tab-wrap ul.tab-menu-02 > li a {
+        white-space: nowrap !important;
+        overflow: visible !important;
+        text-overflow: initial !important;
+        font-size: 13px !important;
+        padding: 8px 12px !important;
+    }
+
+    /* 4. roadmapL.do - Course Completion Status 리스트 정렬 */
+    #m-inHouseEduBody > li.box-type-01,
+    #m-myPickBody > li.box-type-01 {
+        padding-left: 4.17vmin !important;
+        padding-right: 4.17vmin !important;
+    }
+
+    /* 4-1. roadmapL.do (Mobile) - 카드 섹션(.box-type-b-gry) 중앙 정렬 */
+    .sub-layout .box-type-b-gry {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 4.17vmin !important;
+        padding-right: 4.17vmin !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 4-2. roadmapL.do (Mobile) - 나의 학습 현황 리스트 균등 배치 */
+    .status-wrap ul.fx-jcsb {
+        justify-content: space-around !important;
+        width: 100% !important;
+        flex-wrap: wrap !important;
+    }
+    .status-wrap ul.fx-jcsb > li {
+        text-align: center !important;
+        flex: 0 0 30% !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* 4-3. roadmapL.do (PC at mobile width) - 카드 섹션 중앙 정렬 */
+    .sub-contents .layout-inner .box-type-01 {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 4.17vmin !important;
+        padding-right: 4.17vmin !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+    }
+
+    /* 4-4. roadmapL.do (PC) - 나의 수강 이력(lst-type-01) 그리드 중앙 정렬 */
+    .sub-contents .lst-type-01 {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 15px !important;
+        justify-items: center !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    .sub-contents .lst-type-01 > li {
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    /* 4-5. roadmapL.do - Course Completion Status 카드 리스트 전체 너비 사용 */
+    #m-inHouseEduBody,
+    #m-myPickBody {
+        width: 100% !important;
+        padding: 0 4.17vmin !important;
+        box-sizing: border-box !important;
+    }
+    #m-inHouseEduBody > li.box-type-01,
+    #m-myPickBody > li.box-type-01 {
+        width: 100% !important;
+        padding: 15px !important;
+        box-sizing: border-box !important;
+    }
+    /* 카드 내부를 세로 배치로 변경 (번호 위, 정보 아래) */
+    #m-inHouseEduBody > li.box-type-01 > div,
+    #m-myPickBody > li.box-type-01 > div {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+    }
+    /* 번호 영역 */
+    #m-inHouseEduBody .form-slt-chk,
+    #m-myPickBody .form-slt-chk {
+        margin-bottom: 5px !important;
+    }
+    /* 정보 영역 전체 너비 */
+    #m-inHouseEduBody > li.box-type-01 > div > div:last-child,
+    #m-myPickBody > li.box-type-01 > div > div:last-child {
+        width: 100% !important;
+    }
+    /* mark-v-bar-01 가로 배치 및 균등 분배 */
+    #m-inHouseEduBody .mark-v-bar-01,
+    #m-myPickBody .mark-v-bar-01 {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        width: 100% !important;
+        gap: 5px 0 !important;
+    }
+    #m-inHouseEduBody .mark-v-bar-01 > span,
+    #m-myPickBody .mark-v-bar-01 > span {
+        flex: 1 1 45% !important;
+        min-width: 45% !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+    }
+
+    /* 5. Approval Status 팝업 - 헤더 30% 비율 */
+    #paymentinfo .tbl-type-01-03 th,
+    .pop-type-01 .tbl-type-01-03 th {
+        width: 30% !important;
+        min-width: 30% !important;
+        max-width: 30% !important;
+    }
+    #paymentinfo .tbl-type-01-03 td,
+    .pop-type-01 .tbl-type-01-03 td {
+        width: 70% !important;
+    }
+
+    /* 6. applyF.do - Enroll Now, Direct Select 버튼 크기 통일 */
+    .sub-contents .brd-wrap ul > li.box-type-01-02 > div:last-child {
+        min-width: 150px !important;
+        width: 150px !important;
+    }
+    .sub-contents .brd-wrap ul > li.box-type-01-02 > div:last-child > div {
+        width: 100% !important;
+    }
+    .sub-contents .brd-wrap ul > li.box-type-01-02 [class*="btn-type"] {
+        width: 100% !important;
+        min-width: 100% !important;
+        text-align: center !important;
+    }
+
+}

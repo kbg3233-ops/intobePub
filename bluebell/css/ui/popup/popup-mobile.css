@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	/* Initialize */
 		[class*="pop-type"] {
 			/* Wrap */
@@ -15,10 +15,10 @@
 			--m-pop-head-h: var(--pop-head-h);
 			--m-pop-head-pd-l: var(--pop-head-pd-l);
 			--m-pop-head-ft-c: var(--pop-head-ft-c);
-			--m-pop-head-ft-s: 2.78vw;
+			--m-pop-head-ft-s: 2.78vmin;
 
 			/* Footer */
-			--m-pop-foot-gap: 1.67vw;
+			--m-pop-foot-gap: 1.67vmin;
 			--m-pop-foot-h: var(--pop-foot-h);
 			--m-pop-foot-pd-x: var(--pop-foot-pd-x);
 
@@ -29,8 +29,8 @@
 			--m-pop-cont-pd-y: var(--pop-cont-pd-y);
 
 			/* Close */
-			--m-pop-close-w: 4.2vw;
-			--m-pop-close-h: 4.2vw;
+			--m-pop-close-w: 4.2vmin;
+			--m-pop-close-h: 4.2vmin;
 		}
 
 	/* Wrap */

@@ -9,7 +9,7 @@
 	outline: var(--out-bd-w, 1px) var(--out-bd-s, solid) var(--out-bd-c, black);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	[style*="--m-bd"] {
 		border-left: var(--m-bd-l-w, var(--m-bd-w, var(--bd-w, 1px))) var(--m-bd-l-s, var(--m-bd-s, var(--bd-s, solid))) var(--m-bd-l-c, var(--m-bd-c, var(--bd-c, black)));
 		border-top: var(--m-bd-t-w, var(--m-bd-w, var(--bd-w, 1px))) var(--m-bd-t-s, var(--m-bd-s, var(--bd-s, solid))) var(--m-bd-t-c, var(--m-bd-c, var(--bd-c, black)));

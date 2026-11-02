@@ -28,6 +28,6 @@
 		[class*="swiper-type"] { width: var(--swiper-w, 100%); height: var(--swiper-h, auto); }
 
 /* Temp */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	[class*="swiper-type"] { width: var(--m-swiper-w, var(--swiper-w)); height: var(--m-swiper-h, var(--swiper-h)); }
 }

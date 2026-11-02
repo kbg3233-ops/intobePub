@@ -28,7 +28,7 @@ $(window).on("load", function () {
 
 $(function () {
 	$("header").gnb(); // 헤더 메뉴
-	//$(document).mainHeader(); // 메인 헤더 스크롤
+	// $(document).mainHeader(); // 메인 헤더 스크롤
 	$(document).acoUI(); // 아코디언
 	$(document).tta(); // 활성화 토글
 	$(document).selfTg(); // 셀프 활성화
@@ -36,34 +36,26 @@ $(function () {
 	$("[class*='swi-type']").swiperInit(); // 스와이퍼
 	$(document).inpPswd(); // 비밀번호 보이기 토글
 	$(".tab-wrap").tabUI(); // 탭메뉴
+
 	$(document).datep(); // 데이트피커
-
-	/*
 	$(document).popUI(); // 팝업
-
 	//$(document).prevttg(); // 이전 활성화 제거
-	$("[data-self]").selfTg();
+	//$("header").gnb(); // 글로벌 네비게이션
 	//$(".lnb-wrap").lnb(); // 로컬 네비게이션
 	$("[data-scr-fix]").scrFix();
-
-
-
 	//$(".vdo-wrap").vdoPlyer(); // 비디오
 	$(document).tooltipUI(); // 툴팁
-	$(document).selfTg(); // 셀프 활성화
 	$(document).starscore(); // 별점
-
 	$(document).inpVal(); // 인풋 밸리데이션 문구
 	$("[class*='inp-file']").inpFile(); // 파일 업로드
 	$("[class*='inp-img']").inpImg(); // 이미지 업로드
 	$(document).txtAr(); // 텍스트에어리어
 	$(".btn-df-ic-btntop").topBtn(); // 탑버튼
 	$(window, document, "body").scrUI(); // 스크롤 관련 기능 모두 포함
-
+	// $("header").hUI(); // 헤더
 	// 메뉴
 	$(".sub-h-menu-od").menu();
-	$(".lnb-menu-od").menu();*/
-
+	$(".lnb-menu-od").menu();
 });
 
 // Has Attribute (Required)
@@ -233,8 +225,10 @@ $.fn.contRpt = function (dom, num, idx) {
 $.fn.swiperInit = function () {
 	$(".swiper-type-01").each(function () {
 		const swiperTG = this;
+		const swiperEl = swiperTG.querySelector(".swiper");
+		if (!swiperEl) return;
 
-		new Swiper(swiperTG.querySelector(".swiper"), {
+		new Swiper(swiperEl, {
 			loop: false,
 			slidesPerView: 1,
 			spaceBetween: 25,
@@ -247,8 +241,10 @@ $.fn.swiperInit = function () {
 
 	$(".swiper-type-02").each(function () {
 		const swiperTG = this;
+		const swiperEl = swiperTG.querySelector(".swiper");
+		if (!swiperEl) return;
 
-		new Swiper(swiperTG.querySelector(".swiper"), {
+		new Swiper(swiperEl, {
 			loop: false,
 			slidesPerView: 1.5,
 			spaceBetween: 39,
@@ -264,8 +260,10 @@ $.fn.swiperInit = function () {
 
 	$(".swiper-type-03").each(function () {
 		const swiperTG = this;
+		const swiperEl = swiperTG.querySelector(".swiper");
+		if (!swiperEl) return;
 
-		new Swiper(swiperTG.querySelector(".swiper"), {
+		new Swiper(swiperEl, {
 			loop: false,
 			slidesPerView: 3.3,
 			slidesPerGroup: 3,
@@ -284,8 +282,11 @@ $.fn.swiperInit = function () {
 	});
 
 	$(".swiper-type-04").each(function () {
-		swiperTG = this;
-		new Swiper(swiperTG.querySelector(".swiper"), {
+		const swiperTG = this;
+		const swiperEl = swiperTG.querySelector(".swiper");
+		if (!swiperEl) return;
+
+		new Swiper(swiperEl, {
 			loop: true,
 			autoplay: {
 				delay: 3000,
@@ -342,6 +343,10 @@ $.fn.tabUI = function (options) {
 	};
 };
 
+
+
+
+
 // Date Picker
 $.fn.datep = function () {
 	var $obj = $(this),
@@ -364,20 +369,13 @@ $.fn.datep = function () {
 
 function getResponsiveSize(mobilePx, pcPx) {
     // mobilePx: 720px 기준 px값(예: 26), pcPx: PC에서 사용할 px값(예: 18)
-    if (window.innerWidth <= 720) {
-        // 720px 기준 px값을 현재 해상도에 맞게 비례 환산
-        return +(window.innerWidth * (mobilePx / 720)).toFixed(2);
+    // 휴대폰 가로모드도 모바일로 판정 (CSS 모바일 미디어쿼리와 동일 조건)
+    if (window.matchMedia('(max-width: 720px), (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse)').matches) {
+        // 720px 기준 px값을 현재 해상도에 맞게 비례 환산 (가로모드는 짧은 변 기준)
+        return +(Math.min(window.innerWidth, window.innerHeight) * (mobilePx / 720)).toFixed(2);
     }
     return pcPx;
 }
-
-
-
-
-
-
-
-
 
 // Popup
 $.fn.popUI = function () {
@@ -700,7 +698,7 @@ $.fn.inpFile = function () {
 
 			$fileLst = $(this).closest(".inp-file").find(".inp-file-lst");
 			$inpTxt.val(fileNM);
-			$fileLst.append("<li><span>"+fileNM+"</span><button type='button' class='inp-ic-del'></button>");
+			$fileLst.append("<li><span>"+fileNM+"</span><button type='button' class='inp-ic-del ic-del-02'></button>");
 		});
 
 		$obj.on("click", ".inp-ic-del", function (e) {

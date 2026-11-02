@@ -14,7 +14,7 @@
 [style*="--pd-y"] { padding-block: var(--pd-y); }
 [style*="--pd-a"] { padding: var(--pd-a); }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
 	[style*="--m-mg-t"] { margin-top: var(--m-mg-t); }
 	[style*="--m-mg-b"] { margin-bottom: var(--m-mg-b); }
 	[style*="--m-mg-l"] { margin-left: var(--m-mg-l); }
