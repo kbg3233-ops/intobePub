@@ -1,6 +1,7 @@
 $(function () {
 	$(".h-tab").hTab(); // 헤더 탭 활성 위치로 스크롤
 	$(".seg-toggle").segToggle(); // 선택 토글
+	$(".tab-btn").segToggle(); // 버튼형 탭 (선택 토글과 같은 방식)
 	$(document).tta(); // 활성화 토글 (팝업 열기/닫기)
 });
 

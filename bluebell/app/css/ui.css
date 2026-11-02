@@ -60,6 +60,22 @@
 	.sec-head { display: flex; place-items: center; place-content: space-between; }
 	.sec-head .sec-tit { font-weight: 600; font-size: calc(16 * var(--px)); line-height: calc(22 * var(--px)); color: var(--text-primary); }
 	.sec-head .sec-tit-lg { font-weight: 600; font-size: calc(20 * var(--px)); line-height: calc(28 * var(--px)); color: var(--primary-default); }
+	.sec-head .sec-tit-m { font-weight: 600; font-size: calc(18 * var(--px)); line-height: calc(26 * var(--px)); color: var(--text-primary); } /* Section Title (18) */
+
+/* 탭 / 버튼형 (높이 34, radius 6) : 선택된 버튼에 .active */
+	.tab-btn { display: flex; gap: calc(6 * var(--px)); overflow-x: auto; scrollbar-width: none; }
+	.tab-btn::-webkit-scrollbar { display: none; }
+	.tab-btn button { flex-shrink: 0; height: calc(34 * var(--px)); padding-inline: calc(14 * var(--px)); border-radius: calc(6 * var(--px)); background: var(--bg-gray-hover); font-weight: 500; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-secondary); white-space: nowrap; }
+	.tab-btn button.active { background: var(--brand-dark); color: var(--text-on-primary); }
+
+/* Info Row (라벨 + 값) */
+	.info-list { display: flex; flex-direction: column; gap: calc(4 * var(--px)); font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); }
+	.info-list > div { display: flex; gap: calc(12 * var(--px)); }
+	.info-list dt { flex-shrink: 0; color: var(--text-secondary); white-space: nowrap; }
+	.info-list dd { flex: 1; min-width: 0; color: var(--text-primary); }
+
+/* 정보 없음 */
+	.empty-state { padding-block: calc(32 * var(--px)); font-weight: 300; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); text-align: center; color: var(--text-tertiary); }
 
 /* Course Card (썸네일 + 과정명 + 설명 + 기간) */
 	.course-card { display: flex; flex-direction: column; gap: calc(10 * var(--px)); min-width: 0; }

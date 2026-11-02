@@ -147,3 +147,37 @@
 
 	.course-list { display: flex; flex-direction: column; gap: calc(12 * var(--px)); padding-inline: var(--init-layout-padding); }
 	.course-search .paging { padding: calc(24 * var(--px)) var(--init-layout-padding) calc(40 * var(--px)); }
+
+/* My team - 조직도 */
+	.org-link { --full-bg: var(--bg-page); position: relative; display: flex; gap: calc(12 * var(--px)); padding: calc(20 * var(--px)) var(--init-layout-padding); }
+	.org-link a { display: flex; place-items: center; place-content: center; gap: calc(6 * var(--px)); flex: 1; min-width: 0; height: calc(64 * var(--px)); padding-inline: calc(17 * var(--px)); border-radius: calc(4 * var(--px)); background: white; font-weight: 500; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-primary); white-space: nowrap; }
+	.org-link a::after { content: ""; width: calc(14 * var(--px)); height: calc(14 * var(--px)); background: url("../images/ico/ico_arrow_up_r.svg") no-repeat center / contain; }
+
+	.org-talent { display: flex; flex-direction: column; gap: calc(20 * var(--px)); padding: calc(24 * var(--px)) var(--init-layout-padding) calc(32 * var(--px)); }
+	.org-talent .list-head { display: flex; flex-direction: column; gap: calc(12 * var(--px)); }
+
+	.member-list { display: flex; flex-direction: column; gap: calc(12 * var(--px)); }
+	.member-card { display: flex; place-items: center; gap: calc(12 * var(--px)); width: 100%; padding: calc(20 * var(--px)); border: 1px solid var(--border-default); border-radius: calc(4 * var(--px)); background: white; text-align: left; }
+	.member-card::after { content: ""; flex-shrink: 0; width: calc(24 * var(--px)); height: calc(24 * var(--px)); background: url("../images/ico/ico_chevron_r24.svg") no-repeat center / contain; }
+	.member-card > div { display: flex; flex-direction: column; gap: calc(4 * var(--px)); flex: 1; min-width: 0; }
+	.member-card .name { font-weight: 600; font-size: calc(16 * var(--px)); line-height: calc(22 * var(--px)); color: var(--text-primary); }
+	.member-card .dept { display: flex; place-items: center; gap: calc(6 * var(--px)); overflow: hidden; font-weight: 300; font-size: calc(14 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-secondary); white-space: nowrap; }
+	.member-card .dept span + span::before { content: ""; display: inline-block; width: 1px; height: calc(8 * var(--px)); margin-right: calc(6 * var(--px)); background: var(--divider-default); vertical-align: middle; }
+
+/* 인재역량관리 상세 (팝업) */
+	.talent .tab-btn { padding: calc(12 * var(--px)) var(--init-layout-padding); }
+	.talent-info { display: flex; flex-direction: column; gap: calc(12 * var(--px)); padding: calc(20 * var(--px)); background: var(--bg-page); }
+	.talent-info > * { border-radius: calc(4 * var(--px)); background: white; }
+
+	.talent-profile { display: flex; place-items: flex-start; gap: calc(18 * var(--px)); padding: calc(20 * var(--px)); }
+	.talent-profile > img { flex-shrink: 0; width: calc(54.04 * var(--px)); height: calc(54.02 * var(--px)); }
+	.talent-profile .name { font-weight: 600; font-size: calc(18 * var(--px)); line-height: calc(26 * var(--px)); color: var(--text-primary); white-space: pre; }
+	.talent-profile .meta { display: flex; flex-direction: column; gap: calc(2 * var(--px)); margin-top: calc(3 * var(--px)); font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-secondary); }
+	.talent-info .info-list { padding: calc(20 * var(--px)); }
+
+	.talent-stat { display: flex; gap: calc(8 * var(--px)); background: none !important; }
+	.talent-stat > div { display: flex; place-items: center; place-content: space-between; flex: 1; min-width: 0; padding: calc(14 * var(--px)) calc(20 * var(--px)); border-radius: calc(4 * var(--px)); background: white; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); white-space: nowrap; }
+	.talent-stat dt { font-weight: 300; color: var(--text-secondary); }
+	.talent-stat dd { font-weight: 500; color: var(--primary-default); }
+
+	.talent-course { display: flex; flex-direction: column; gap: calc(12 * var(--px)); padding: calc(32 * var(--px)) var(--init-layout-padding) 0; }
