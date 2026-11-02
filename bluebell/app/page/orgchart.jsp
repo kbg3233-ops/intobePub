@@ -28,46 +28,45 @@
 
 	<ul class="member-list">
 		<li>
-			<button type="button" class="member-card" data-tta="talent">
+			<a href="talent_detail.jsp" class="member-card">
 				<div>
 					<p class="name">홍길동</p>
 					<p class="dept"><span>Core of Expertise</span><span>Store Manager</span></p>
 				</div>
-			</button>
+			</a>
 		</li>
 		<li>
-			<button type="button" class="member-card" data-tta="talent">
+			<a href="talent_detail.jsp" class="member-card">
 				<div>
 					<p class="name">김지훈</p>
 					<p class="dept"><span>People Support</span><span>Store Manager</span></p>
 				</div>
-			</button>
+			</a>
 		</li>
 		<li>
-			<button type="button" class="member-card" data-tta="talent">
+			<a href="talent_detail.jsp" class="member-card">
 				<div>
 					<p class="name">이동휘</p>
 					<p class="dept"><span>Business Partners</span><span>Store Manager</span></p>
 				</div>
-			</button>
+			</a>
 		</li>
 		<li>
-			<button type="button" class="member-card" data-tta="talent">
+			<a href="talent_detail.jsp" class="member-card">
 				<div>
 					<p class="name">이주은</p>
 					<p class="dept"><span>Employee Relations</span><span>Store Manager</span></p>
 				</div>
-			</button>
+			</a>
 		</li>
 		<li>
-			<button type="button" class="member-card" data-tta="talent">
+			<a href="talent_detail.jsp" class="member-card">
 				<div>
 					<p class="name">김무열</p>
 					<p class="dept"><span>Employee Relations</span><span>Store Manager</span></p>
 				</div>
-			</button>
+			</a>
 		</li>
 	</ul>
 </div>
-<%@ include file="popup/talent_detail.jsp" %> <!-- 인재역량관리 상세 -->
 <%@ include file="../inc/footer.jsp" %>

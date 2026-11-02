@@ -6,22 +6,28 @@
 	- pageTabs : 탭 메뉴 (없으면 생략)
 	- pageTabOn : 활성 탭 순서 (0부터)
 	- hideUtil : true면 알림·언어 아이콘 숨김 (신청 화면)
+	- closeBtn : true면 ‹ 대신 오른쪽 X 버튼 (X = 뒤로가기, 알림·언어 아이콘 없음, 하단 선) (상세 화면)
 --%>
 <%
 	String pageTitle = (String) request.getAttribute("pageTitle");
 	String[] pageTabs = (String[]) request.getAttribute("pageTabs");
 	Integer pageTabOn = (Integer) request.getAttribute("pageTabOn");
 	boolean hideUtil = Boolean.TRUE.equals(request.getAttribute("hideUtil"));
+	boolean closeBtn = Boolean.TRUE.equals(request.getAttribute("closeBtn"));
 	if (pageTabOn == null) pageTabOn = 0;
 %>
 <%@ include file="../inc/global_header.jsp" %>
-<header class="h-wrap full-bg">
+<header class="h-wrap full-bg<%= closeBtn ? " h-close" : "" %>">
 	<div class="h-gnb">
 		<h2 class="h-tit">
+			<% if (!closeBtn) { %>
 			<button type="button" class="btn-back" onclick="history.back();"><img src="../images/ico/ico_back.svg" alt="뒤로가기"></button>
+			<% } %>
 			<%= pageTitle == null ? "" : pageTitle %>
 		</h2>
-		<% if (!hideUtil) { %>
+		<% if (closeBtn) { %>
+		<button type="button" class="btn-close" onclick="history.back();"><img src="../images/ico/ico_close.svg" alt="닫기"></button>
+		<% } else if (!hideUtil) { %>
 		<div class="h-util">
 			<button type="button" class="btn-alarm" data-tta="alarm"><img src="../images/ico/ico_bell.svg" alt="알림"></button>
 			<button type="button" class="btn-lang"><img src="../images/ico/ico_lang.svg" alt="언어 선택"></button>
