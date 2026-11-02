@@ -80,6 +80,7 @@
 - **헤더 탭 개수**: 탭은 페이지 맨 위 `pageTabs` 목록 개수만큼 생기고, 화면보다 길면 가로 스크롤, 활성 탭은 자동으로 보이게 스크롤 (`app/js/front.js`의 `hTab`)
 - **Figma**: Claude의 Figma 연결 계정 "인투비"(intobe.design@gmail.com, 인투비의 팀)로 모바일 시안 파일을 읽을 수 있음
 - **회사 컴퓨터 이어하기**: 퍼블 폴더에서 `git status` 확인 → `git pull` → `git config user.email on3233@intobe.co.kr`. Tomcat `ROOT.xml`이 `C:/work/Intobe`면 그대로
+- **세팅 가이드**: 다른 컴퓨터 세팅용 `setup-guide.html` 작성 (폴더·저장소 구분, 세팅 순서, 매일 흐름, 헷갈렸던 부분 Q&A, 미정 사항). 사용자가 저장소 밖으로 옮겨 따로 보관해서 저장소에는 없음. 세팅 내용의 기준은 이 CLAUDE.md
 - **모바일 인재역량관리 상세**: 화면설계서상 하단 메뉴 없어도 됨 → 팝업 대신 별도 페이지 + X = 뒤로가기로 우선 작업. "추후에 수정하자" (`app/CLAUDE.md` 3. 조직도 참고)
 
 ## PC 작업 기록
