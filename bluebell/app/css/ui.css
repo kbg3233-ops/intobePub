@@ -4,6 +4,14 @@
 	.logo-edu { --logo-scale: 1; display: block; }
 	.logo-edu img { width: calc(186.2 * var(--logo-scale) * var(--px)); height: auto; }
 
+/* Button / Large (높이 45, radius 4, 가로 꽉 참)
+	.btn-l-primary : Primary 채움
+	앞 아이콘(Leading Icon)은 버튼 안 첫 번째 img (24px)
+*/
+	[class*="btn-l-"] { display: flex; place-items: center; place-content: center; gap: calc(6 * var(--px)); width: 100%; height: calc(45 * var(--px)); padding-inline: calc(16 * var(--px)); border-radius: calc(4 * var(--px)); font-weight: 500; font-size: calc(16 * var(--px)); line-height: calc(22 * var(--px)); white-space: nowrap; }
+	[class*="btn-l-"] img { flex-shrink: 0; width: calc(24 * var(--px)); height: calc(24 * var(--px)); }
+	.btn-l-primary { background: var(--primary-default); color: var(--text-on-primary); }
+
 /* Button / Middle (높이 36, radius 4)
 	.btn-m-primary : Primary 채움
 */

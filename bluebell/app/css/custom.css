@@ -109,3 +109,26 @@
 	.install .install-card [class*="btn-m-"] { width: 100%; margin-top: calc(12 * var(--px)); }
 
 	.install .install-note { margin-top: calc(40 * var(--px)); font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); text-align: center; color: var(--text-tertiary); }
+
+/* 교육과정 - 정규과정 조회/신청 */
+	body:has(.regcourse) { background-color: var(--bg-page); } /* 최대 폭 바깥 영역까지 배경색 */
+	.regcourse { display: flex; flex-direction: column; gap: calc(20 * var(--px)); padding-block: calc(32 * var(--px)); background: var(--bg-page); }
+	.regcourse .page-tit { font-weight: 600; font-size: calc(20 * var(--px)); line-height: calc(28 * var(--px)); text-align: center; color: var(--text-primary); }
+
+	.regcourse-list { display: flex; flex-direction: column; gap: calc(12 * var(--px)); }
+	.regcourse-list .card-box { display: flex; flex-direction: column; gap: calc(32 * var(--px)); border-radius: 0; }
+	.regcourse-list .regcourse-notice { padding: calc(20 * var(--px)); font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-primary); }
+
+	.regcourse-action { display: flex; flex-direction: column; gap: calc(8 * var(--px)); }
+	.regcourse-action .note { display: flex; gap: calc(4 * var(--px)); font-size: calc(10 * var(--px)); line-height: calc(14 * var(--px)); color: var(--text-secondary); }
+	.regcourse-action .note::before { content: "*"; flex-shrink: 0; padding-top: calc(3 * var(--px)); font-weight: 600; }
+	.regcourse-action .note em { color: var(--brand-dark); }
+
+	.regcourse-body { display: flex; flex-direction: column; gap: calc(20 * var(--px)); }
+	.regcourse-body h3 { font-weight: 600; font-size: calc(16 * var(--px)); line-height: calc(22 * var(--px)); color: var(--text-primary); }
+	.regcourse-body h4 { font-weight: 500; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--brand-dark); }
+	.regcourse-body p,
+	.regcourse-body ul { margin-top: calc(6 * var(--px)); font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-secondary); }
+	.regcourse-body ul { display: flex; flex-direction: column; gap: calc(2 * var(--px)); }
+	.regcourse-body li { display: flex; gap: calc(4 * var(--px)); }
+	.regcourse-body li::before { content: "·"; flex-shrink: 0; width: calc(4 * var(--px)); }

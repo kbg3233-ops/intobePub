@@ -81,6 +81,7 @@ app/
 | `.h-scroll` | 가로 스크롤 목록 (카드 폭 215.33) |
 | `.seg-toggle` | 선택 토글 (국문/영문), 선택 버튼 `.active` |
 | `.list-count` | List Count (전체 7) |
+| `.btn-l-primary` | Button / Large (높이 45, 가로 꽉 참). 앞 아이콘은 버튼 안 img |
 
 - 하단 탭바 아이콘은 SVG + CSS `mask`로 색 변경 (활성/비활성). PNG 스프라이트 전환 여부는 미정.
 - 차트는 PC와 같은 Chart.js(`../../js/chart.js`) + datalabels 사용.
@@ -101,10 +102,21 @@ app/
 - 알림은 처음에 페이지(`notice.jsp`)로 만들었다가 사용자 요청으로 **아주대·PC와 같은 팝업 방식**으로 전환
 - 팝업 안 좌우 스크롤 문제 → `.pop-type-full`에 `overflow-x: hidden`
 
-### 2. 교육과정 — 다음 작업
+### 2. 교육과정 — 진행 중
 
-Figma "최종" 페이지의 `2. 교육과정` 섹션: 정규과정 / 교육과정 조회 / 교육과정 조회 - 상세검색
+Figma "최종" 페이지의 `2. 교육과정` 섹션(`1471:14242`): 정규과정 / 교육과정 조회 / 교육과정 조회 - 상세검색
 (메인에서 만든 `.course-card`, `.h-scroll`, 서브 헤더 탭 `pageTabs` 재사용 예정)
+
+| 화면 | 파일 | 비고 |
+|---|---|---|
+| 정규과정 (2026-11-02) | `page/regcourse.jsp` | Figma `1471:14243`. 안내 카드 + BBK 맞춤형 / 직무역량 일반(Skillsoft) 카드. 파일명은 PC `page/regcourse.jsp`와 맞춤 |
+
+- 시안 카드는 모서리 각짐 → `.card-box`에 `border-radius: 0` (메인 카드는 radius 4)
+- 버튼 글자 굵기: 시안이 첫 번째 Medium, 두 번째 SemiBold로 다름 → 컴포넌트 기본값 Medium(500)으로 통일
+- 시안 헤더 탭은 5개("정규과정"이 끝에 한 번 더)인데, 중복으로 보여 `layout_sub.jsp`와 같은 4개로 함
+- 유튜브 아이콘: Figma에서 받은 `images/ico/ico_youtube.svg`
+
+다음: 교육과정 조회(`1471:14294`), 교육과정 조회 - 상세검색
 
 ## 남은 확인 사항
 
