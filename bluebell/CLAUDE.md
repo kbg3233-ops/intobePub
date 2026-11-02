@@ -44,6 +44,8 @@
 - 작업이 끝나면 **"확인 링크"** 로 수정한 화면의 localhost 주소를 정리해서 준다. 팝업처럼 버튼으로 여는 화면은 어디서 무엇을 누르는지 함께 적는다. (사용자는 VS Code에서 Ctrl+클릭으로 연다)
 - 사용자가 파일을 직접 수정하기도 한다. 수정 전에 `git diff`로 사용자 변경을 확인하고, 파일을 통째로 다시 쓰기 전에는 반드시 다시 읽는다. 사용자 수정을 덮어쓰지 않는다.
 - 커밋·push는 사용자가 요청할 때 한다. 다른 컴퓨터에서 이어서 작업하므로 보통 push까지.
+- **대화로 정한 것도 기록한다** (사용자 요청 2026-11-02): 작업 내용뿐 아니라 사용자와 나눈 결정·설명·보류 사항을 이 파일(또는 `app/CLAUDE.md`)의 "대화 기록"에 남기고, 커밋할 때 함께 올린다. Claude의 기억은 컴퓨터마다 따로라서 다른 컴퓨터에서는 이 파일만 이어진다.
+- 화면이 예전 모습으로 보이면 사용자에게 **Ctrl+F5**(강력 새로고침)를 안내한다 (css 캐시)
 - 파일은 CRLF 줄바꿈. Git Bash의 `sed -i`로 고치면 LF로 바뀌니 끝나고 CRLF로 되돌린다.
 - 시안 확인: Figma 링크는 Figma MCP로 직접 읽는다 (처음에 `/mcp` → claude.ai Figma 로그인 필요). **PSD는 직접 못 읽음** → 사용자가 PSD 옆에 PNG를 내보내 둠 (예: `C:\Users\DesignPL\Desktop\작업psd\bluebell\pc\알림.png`). PNG만 있을 때는 수치를 측정해서 쓰고, 추정한 수치는 알려준다.
 - 렌더링 확인: 헤드리스 크롬으로 캡처해서 시안과 비교 (`chrome.exe --headless=new --screenshot`). 375px처럼 좁은 폭은 iframe으로 감싸서 찍는다.
@@ -64,6 +66,21 @@
 - [ ] `page/login.jsp` placeholder가 `비밀번호를 입력하세요!`로 되어 있음 (10/27·10/29 "test" 커밋에서 바뀐 것으로 보임) → 되돌릴지 사용자 확인
 - [ ] 개발자에게 전달: 선임 커밋 `c8bd243`(2025-12-12) 중 운영에 빠진 것 — 탭 버튼 좌우 여백 `--tab-btn-pd-x: 20px`(운영 0), PC My 학습현황 `.main-learning-stat` 글자 15px·자간 -1px
 - [ ] PC `li.read` 파란 글씨, 모바일 알림(`m-alarm.jsp`) 미적용, PC 전체 Pretendard 전환 여부 (아래 PC 작업 기록 참고)
+
+## 대화 기록 (결정·설명·보류)
+
+### 2026-11-02
+
+- **GitHub와 GitLab**: 퍼블 저장소(`github.com/kbg3233-ops/intobePub`)는 사용자 개인 **비공개** 저장소이고, 부루벨 말고 다른 고객사 프로젝트(아주대, 안동, 삼일 등)도 함께 들어 있다. 운영 소스는 회사 GitLab(`122.99.198.174/intobe/project/bluebell.git`).
+  - 개발자에게 GitHub 주소만 넘겨서는 못 본다 (초대 필요, 초대하면 저장소 전체가 보임)
+  - 전달 방법 후보: ① GitHub 초대 ② 바뀐 파일만 압축 + 변경 목록 ③ GitLab에 직접 올리기 (브랜치 + 머지 리퀘스트, 운영 소스 안의 `member/src/main/webapp/html/bluebell/` 퍼블 사본 폴더를 전달 창구로 쓰는 안)
+  - 이 컴퓨터의 운영 폴더(`C:\work\bluebell`)는 GitLab에 사용자 계정 `on3233`으로 연결돼 있고 받아오기(pull)는 됨. 올리기 권한은 미확인
+  - **사용자 결정: 일단 보류** ("됐어 일단은"). 개발자에게 전달 방식·권한 확인 후 정하기
+- **PC 헤드 제목**: `inc/global_header.jsp`, `global_header_e.jsp`의 `<title>`·meta를 "캐논코리아" → "부루벨에듀"로 변경. 본문 샘플 이름 "김캐논", "캐논본사"는 **그대로 두기로 함** (사용자: "그건 괜찮아")
+- **헤더 탭 개수**: 탭은 페이지 맨 위 `pageTabs` 목록 개수만큼 생기고, 화면보다 길면 가로 스크롤, 활성 탭은 자동으로 보이게 스크롤 (`app/js/front.js`의 `hTab`)
+- **Figma**: Claude의 Figma 연결 계정 "인투비"(intobe.design@gmail.com, 인투비의 팀)로 모바일 시안 파일을 읽을 수 있음
+- **회사 컴퓨터 이어하기**: 퍼블 폴더에서 `git status` 확인 → `git pull` → `git config user.email on3233@intobe.co.kr`. Tomcat `ROOT.xml`이 `C:/work/Intobe`면 그대로
+- **모바일 인재역량관리 상세**: 화면설계서상 하단 메뉴 없어도 됨 → 팝업 대신 별도 페이지 + X = 뒤로가기로 우선 작업. "추후에 수정하자" (`app/CLAUDE.md` 3. 조직도 참고)
 
 ## PC 작업 기록
 
