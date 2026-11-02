@@ -132,3 +132,18 @@
 	.regcourse-body ul { display: flex; flex-direction: column; gap: calc(2 * var(--px)); }
 	.regcourse-body li { display: flex; gap: calc(4 * var(--px)); }
 	.regcourse-body li::before { content: "·"; flex-shrink: 0; width: calc(4 * var(--px)); }
+
+/* 교육과정 - 교육과정 조회 */
+	body:has(.course-search) { background-color: var(--bg-page); } /* 최대 폭 바깥 영역까지 배경색 */
+	.course-search { background: var(--bg-page); }
+	.course-search .page-tit { padding: calc(32 * var(--px)) var(--init-layout-padding) calc(20 * var(--px)); font-weight: 600; font-size: calc(20 * var(--px)); line-height: calc(28 * var(--px)); text-align: center; color: var(--text-primary); }
+
+	.course-best { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: calc(12 * var(--px)); padding: 0 var(--init-layout-padding) calc(20 * var(--px)); }
+	.course-search .sec-line { --full-bg: var(--bg-gray-hover); position: relative; height: calc(8 * var(--px)); } /* 구분 띠 (최대 폭 바깥까지) */
+
+	.course-search .search-box { padding: calc(32 * var(--px)) var(--init-layout-padding) calc(24 * var(--px)); }
+	.course-filter { display: flex; flex-direction: column; gap: calc(12 * var(--px)); padding: 0 var(--init-layout-padding) calc(12 * var(--px)); }
+	.course-filter .count-sort { display: flex; place-items: center; place-content: space-between; }
+
+	.course-list { display: flex; flex-direction: column; gap: calc(12 * var(--px)); padding-inline: var(--init-layout-padding); }
+	.course-search .paging { padding: calc(24 * var(--px)) var(--init-layout-padding) calc(40 * var(--px)); }

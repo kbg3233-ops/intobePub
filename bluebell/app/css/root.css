@@ -26,4 +26,7 @@
 		--bg-page: #f5f7fa; /* bg/page */
 		--brand-grey: #d2dae4; /* brand/grey */
 		--border-disabled: #ececec; /* border/disabled */
+		--border-default: #e2e2e2; /* border/default */
+		--divider-default: #e2e2e2; /* divider/default */
+		--bg-gray-hover: #ececec; /* bg/gray-hover */
 }

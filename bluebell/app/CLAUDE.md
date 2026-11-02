@@ -116,7 +116,15 @@ Figma "최종" 페이지의 `2. 교육과정` 섹션(`1471:14242`): 정규과정
 - 시안 헤더 탭은 5개("정규과정"이 끝에 한 번 더)인데, 중복으로 보여 `layout_sub.jsp`와 같은 4개로 함
 - 유튜브 아이콘: Figma에서 받은 `images/ico/ico_youtube.svg`
 
-다음: 교육과정 조회(`1471:14294`), 교육과정 조회 - 상세검색
+| 교육과정 조회 (2026-11-02) | `page/course_search.jsp` | Figma `1471:14294`. 추천 2개 + 검색 + 개수·정렬·스위치 + 가로형 목록 9개 + 페이지 번호 |
+
+- 교육과정 조회에서 공통으로 추가(`css/ui.css`): `.course-card` 교육과정형(`.course-info` 안에 `.tag-type`/`.cate`/`.tit`/`.meta`/`.date`, 가로형 `.course-row`), `.tag-type`, `.search-box`(상세검색 `data-tta="search-detail"`로 열고 닫음), `.sel-type`, `.sort-tab`, `.switch`, `.paging`
+- 색 토큰 추가(`css/root.css`): `--border-default`, `--divider-default`(#e2e2e2), `--bg-gray-hover`(#ececec)
+- 썸네일: Figma 원본을 `images/dummy/thumb05~11.png`로 받음 (`thumb01~04`와 같은 이미지는 재사용). **`thumb08.png`는 1.8MB** (Figma 원본 크기) → 줄일 필요
+- 스위치 꺼진 색은 시안에 없어서 `--brand-grey`(#d2dae4)로 임시 지정
+- 상세검색 펼친 상태 = Figma `1471:14464` "교육과정 조회 - 상세검색" (별도 페이지 아님, 같은 화면에서 버튼으로 열림). 버튼과 셀렉트 사이 10, 셀렉트끼리 8, 아이콘 + → − (`ico_minus.svg`, CSS `:has`로 전환)
+
+다음: 2. 교육과정 섹션 완료. 3. 조직도(`1549:609`)
 
 ## 남은 확인 사항
 

@@ -69,6 +69,66 @@
 	.course-card .desc { margin-top: calc(4 * var(--px)); font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-primary); }
 	.course-card .date { margin-top: calc(2 * var(--px)); font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-secondary); }
 
+/* Course Card - 교육과정형 (태그 + 분류 + 과정명 + 차수·시간 + 기간)
+	썸네일 아래 .course-info 안에 .tag-type / .cate / .tit / .meta / .date
+	.course-row : 가로형 (썸네일 왼쪽, 교육과정 목록)
+*/
+	.course-card:has(.course-info) { gap: calc(12 * var(--px)); }
+	.course-card .course-info { display: flex; flex-direction: column; place-items: flex-start; gap: calc(4 * var(--px)); min-width: 0; }
+	.course-card .course-info .cate { overflow: hidden; width: 100%; font-weight: 500; font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--primary-default); text-overflow: ellipsis; white-space: nowrap; }
+	.course-card .course-info .tit { width: 100%; }
+	.course-card .course-info:has(.meta) .tit { margin-top: calc(2 * var(--px)); } /* 분류 ~ 과정명 6 */
+	.course-card .course-info .meta { display: flex; place-items: center; gap: calc(6 * var(--px)); font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-primary); white-space: nowrap; }
+	.course-card .course-info .meta span + span::before { content: ""; display: inline-block; width: 1px; height: calc(8 * var(--px)); margin-right: calc(6 * var(--px)); background: var(--divider-default); }
+	.course-card .course-info .date { margin-top: 0; }
+	.course-card .course-info .meta + .date { margin-top: calc(-2 * var(--px)); } /* 차수 ~ 기간 2 */
+	.course-card.course-row { flex-direction: row; place-items: center; }
+	.course-card.course-row > * { flex: 1; }
+	.course-card.course-row .thumb { aspect-ratio: 161 / 90.56; }
+
+/* 태그 (온라인 / 오프라인) */
+	.tag-type { display: inline-flex; place-items: center; padding: calc(2 * var(--px)) calc(4 * var(--px)); border: 1px solid var(--divider-default); border-radius: calc(4 * var(--px)); background: white; font-weight: 600; font-size: calc(10 * var(--px)); line-height: calc(14 * var(--px)); color: var(--text-secondary); white-space: nowrap; }
+
+/* 검색 (상세검색 + 검색어)
+	상세검색 열기/닫기 : .btn-detail[data-tta] ↔ .search-detail[data-ttatg] (.active)
+	열리면 버튼 아이콘 + → − (스크립트 없이 CSS로)
+*/
+	.search-box { display: flex; flex-direction: column; gap: calc(10 * var(--px)); }
+	.search-box .btn-detail { display: flex; place-items: center; place-content: center; gap: calc(6 * var(--px)); width: 100%; height: calc(40 * var(--px)); padding-inline: calc(17 * var(--px)); border: 1px solid var(--border-default); border-radius: calc(4 * var(--px)); background: white; font-weight: 500; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-primary); }
+	.search-box .btn-detail::after { content: ""; width: calc(14 * var(--px)); height: calc(14 * var(--px)); background: url("../images/ico/ico_plus.svg") no-repeat center / contain; }
+	.search-box .btn-detail:has(+ .search-detail.active)::after { background-image: url("../images/ico/ico_minus.svg"); }
+	.search-box .search-detail { display: none; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: calc(8 * var(--px)); padding-top: calc(10 * var(--px)); }
+	.search-box .search-detail.active { display: grid; }
+	.search-box .search-row { display: flex; gap: calc(8 * var(--px)); }
+	.search-box .search-row input { flex: 1; min-width: 0; height: calc(40 * var(--px)); padding-inline: calc(12 * var(--px)); border: 1px solid var(--border-default); border-radius: calc(4 * var(--px)); background: white; font-weight: 300; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-primary); }
+	.search-box .search-row input::placeholder { color: var(--text-tertiary); }
+	.search-box .btn-search { flex-shrink: 0; height: calc(40 * var(--px)); padding-inline: calc(16 * var(--px)); border-radius: calc(3 * var(--px)); background: var(--primary-default); font-weight: 500; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-on-primary); white-space: nowrap; }
+
+/* 셀렉트 (높이 40) */
+	.sel-type { width: 100%; height: calc(40 * var(--px)); padding: 0 calc(32 * var(--px)) 0 calc(12 * var(--px)); border: 1px solid var(--border-disabled); border-radius: calc(4 * var(--px)); background: white url("../images/ico/ico_caret_down.svg") no-repeat right calc(8 * var(--px)) center / calc(20 * var(--px)); font-weight: 300; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-primary); text-overflow: ellipsis; appearance: none; }
+
+/* 정렬 (최신순 | 인기순) : 선택된 버튼에 .active */
+	.sort-tab { display: flex; place-items: center; gap: calc(10 * var(--px)); }
+	.sort-tab button { font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-tertiary); white-space: nowrap; }
+	.sort-tab button + button::before { content: ""; display: inline-block; width: 1px; height: calc(10 * var(--px)); margin-right: calc(10 * var(--px)); background: var(--divider-default); vertical-align: calc(-1 * var(--px)); }
+	.sort-tab button.active { color: var(--text-primary); }
+
+/* 스위치 (켜짐/꺼짐) : input checkbox + 글자 */
+	.switch { display: inline-flex; place-items: center; gap: calc(8 * var(--px)); font-weight: 500; font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-primary); cursor: pointer; }
+	.switch input { position: relative; flex-shrink: 0; width: calc(36 * var(--px)); height: calc(20 * var(--px)); margin: 0; border-radius: calc(10 * var(--px)); background: var(--brand-grey); appearance: none; cursor: pointer; transition: background .2s; }
+	.switch input::before { content: ""; position: absolute; left: calc(4 * var(--px)); top: calc(3 * var(--px)); width: calc(14 * var(--px)); height: calc(14 * var(--px)); border-radius: 50%; background: white; transition: left .2s; }
+	.switch input:checked { background: var(--primary-default); }
+	.switch input:checked::before { left: calc(18 * var(--px)); }
+
+/* 페이지 번호 */
+	.paging { display: flex; place-items: center; place-content: center; gap: calc(8 * var(--px)); }
+	.paging .paging-btn { display: flex; gap: calc(4 * var(--px)); }
+	.paging .paging-btn a { display: flex; place-items: center; place-content: center; width: calc(28 * var(--px)); height: calc(28 * var(--px)); border: 1px solid var(--border-default); border-radius: calc(4 * var(--px)); background: white; }
+	.paging .paging-btn img { width: calc(16 * var(--px)); height: calc(16 * var(--px)); }
+	.paging .paging-num { display: flex; gap: calc(4 * var(--px)); }
+	.paging .paging-num a { display: flex; place-items: center; place-content: center; width: calc(28 * var(--px)); height: calc(28 * var(--px)); font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-secondary); }
+	.paging .paging-num .active { font-weight: 500; color: var(--text-primary); }
+
 /* 가로 스크롤 목록 (오른쪽 끝까지 이어짐) */
 	.h-scroll { display: flex; gap: calc(12 * var(--px)); overflow-x: auto; padding-right: var(--init-layout-padding); scrollbar-width: none; }
 	.h-scroll::-webkit-scrollbar { display: none; }
