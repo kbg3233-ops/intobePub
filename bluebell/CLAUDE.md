@@ -13,7 +13,7 @@
 ## 로컬 서버 / 확인 주소
 
 - Tomcat: `C:\tools\apache-tomcat-10.1.61` (Downloads의 Tomcat 폴더는 비어 있음)
-- `conf/Catalina/localhost/ROOT.xml` → `<Context docBase="C:/work/_backup/Intobe_261102/Intobe" />` (ROOT 컨텍스트, 2026-11-02 변경. 이전 `C:/work/Intobe`)
+- `conf/Catalina/localhost/ROOT.xml` → `<Context docBase="C:/work/Intobe" />` (ROOT 컨텍스트)
 - 주소 = `http://localhost:8080/` + docBase 아래 경로. **`/Intobe`를 붙이면 404**
 - 켜기: `JAVA_HOME=C:\Program Files\Java\jdk-27.0.1.0.3` 설정 후 `bin\catalina.bat run` (startup.bat은 명령 창이 닫히면 같이 꺼짐)
   - PC 메인: http://localhost:8080/bluebell/page/main.jsp
