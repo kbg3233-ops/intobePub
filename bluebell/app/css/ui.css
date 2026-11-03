@@ -4,11 +4,11 @@
 	.logo-edu { --logo-scale: 1; display: block; }
 	.logo-edu img { width: calc(186.2 * var(--logo-scale) * var(--px)); height: auto; }
 
-/* Button / Large (높이 45, radius 4, 가로 꽉 참)
+/* Button / Large (높이 44, radius 4, 가로 꽉 참) : 높이는 가이드 기준 (컴포넌트는 45)
 	.btn-l-primary : Primary 채움
 	앞 아이콘(Leading Icon)은 버튼 안 첫 번째 img (24px)
 */
-	[class*="btn-l-"] { display: flex; place-items: center; place-content: center; gap: calc(6 * var(--px)); width: 100%; height: calc(45 * var(--px)); padding-inline: calc(16 * var(--px)); border-radius: calc(4 * var(--px)); font-weight: 500; font-size: calc(16 * var(--px)); line-height: calc(22 * var(--px)); white-space: nowrap; }
+	[class*="btn-l-"] { display: flex; place-items: center; place-content: center; gap: calc(6 * var(--px)); width: 100%; height: calc(44 * var(--px)); padding-inline: calc(16 * var(--px)); border-radius: calc(4 * var(--px)); font-weight: 600; font-size: calc(16 * var(--px)); line-height: calc(22 * var(--px)); white-space: nowrap; }
 	[class*="btn-l-"] img { flex-shrink: 0; width: calc(24 * var(--px)); height: calc(24 * var(--px)); }
 	.btn-l-primary { background: var(--primary-default); color: var(--text-on-primary); }
 
@@ -23,7 +23,7 @@
 */
 	[class*="btn-s-"] { display: inline-flex; place-items: center; place-content: center; gap: calc(6 * var(--px)); flex-shrink: 0; height: calc(28 * var(--px)); padding-inline: calc(12 * var(--px)); border-radius: calc(3 * var(--px)); font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); white-space: nowrap; }
 	.btn-s-dark { background: var(--brand-dark); color: var(--text-on-primary); }
-	.btn-s-gray { padding-inline: calc(16 * var(--px)); background: #f5f5f5; font-weight: 500; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-primary); }
+	.btn-s-gray { padding-inline: calc(16 * var(--px)); background: var(--bg-gray); font-weight: 500; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-primary); }
 
 /* 선택 토글 (국문/영문 등) : 선택된 버튼에 .active */
 	.seg-toggle { display: flex; flex-shrink: 0; }
@@ -89,7 +89,6 @@
 	썸네일 아래 .course-info 안에 .tag-type / .cate / .tit / .meta / .date
 	.course-row : 가로형 (썸네일 왼쪽, 교육과정 목록)
 */
-	.course-card:has(.course-info) { gap: calc(12 * var(--px)); }
 	.course-card .course-info { display: flex; flex-direction: column; place-items: flex-start; gap: calc(4 * var(--px)); min-width: 0; }
 	.course-card .course-info .cate { overflow: hidden; width: 100%; font-weight: 500; font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--primary-default); text-overflow: ellipsis; white-space: nowrap; }
 	.course-card .course-info .tit { width: 100%; }

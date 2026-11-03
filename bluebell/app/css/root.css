@@ -29,4 +29,12 @@
 		--border-default: #e2e2e2; /* border/default */
 		--divider-default: #e2e2e2; /* divider/default */
 		--bg-gray-hover: #ececec; /* bg/gray-hover */
+		--primary-hover: #57899f; /* primary/hover */
+		--primary-subtle: #96c0cf; /* primary/subtle */
+		--brand-dark-green: #003a44; /* brand/dark-green */
+		--bg-white: white; /* bg/white */
+		--bg-gray: #f5f5f5; /* bg/gray */
+		--status-error: #ff0000; /* status/error */
+		--status-success: #6ac48e; /* status/success */
+		--tag-best: #e2698b; /* tag/best */
 }

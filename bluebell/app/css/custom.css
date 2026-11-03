@@ -15,7 +15,7 @@
 	.main-profile .profile-thumb img { width: calc(54 * var(--px)); height: calc(54 * var(--px)); }
 	.main-profile .profile-nm { font-weight: 600; font-size: calc(18 * var(--px)); line-height: calc(26 * var(--px)); color: var(--text-primary); }
 	.main-profile .profile-team { margin-top: calc(3 * var(--px)); font-weight: 300; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-secondary); }
-	.main-profile .profile-badge { display: flex; place-items: center; gap: calc(47 * var(--px)); padding-top: calc(16 * var(--px)); border-top: 0.5px solid #e2e2e2; }
+	.main-profile .profile-badge { display: flex; place-items: center; gap: calc(47 * var(--px)); padding-top: calc(16 * var(--px)); border-top: 0.5px solid var(--border-default); }
 	.main-profile .profile-badge > div { display: flex; flex-direction: column; place-items: flex-start; gap: calc(6 * var(--px)); }
 	.main-profile .badge-tit { font-weight: 500; font-size: calc(16 * var(--px)); line-height: calc(22 * var(--px)); color: var(--text-primary); white-space: nowrap; }
 	.main-profile .badge-stack { position: relative; flex-shrink: 0; width: calc(116 * var(--px)); height: calc(68.75 * var(--px)); }
@@ -30,8 +30,8 @@
 	.main-learning .chart-legend { display: flex; place-content: center; gap: calc(13 * var(--px)); margin-top: calc(8 * var(--px)); }
 	.main-learning .chart-legend li { display: flex; place-items: center; gap: calc(5 * var(--px)); font-size: calc(10 * var(--px)); line-height: calc(14 * var(--px)); color: var(--text-secondary); }
 	.main-learning .chart-legend li::before { content: ""; width: calc(6.25 * var(--px)); height: calc(6.25 * var(--px)); border-radius: 50%; }
-	.main-learning .chart-legend .online::before { background: #96c0cf; }
-	.main-learning .chart-legend .offline::before { background: #e2698b; }
+	.main-learning .chart-legend .online::before { background: var(--primary-subtle); }
+	.main-learning .chart-legend .offline::before { background: var(--tag-best); }
 	.main-learning .chart-basis { margin-top: calc(16 * var(--px)); font-size: calc(10 * var(--px)); line-height: calc(14 * var(--px)); text-align: right; color: var(--text-secondary); }
 	.main-learning .chart-basis b { font-weight: 600; }
 	.main-learning .chart-scroll { overflow-x: auto; margin-top: calc(12 * var(--px)); scrollbar-width: none; }
@@ -116,7 +116,7 @@
 	.regcourse .page-tit { font-weight: 600; font-size: calc(20 * var(--px)); line-height: calc(28 * var(--px)); text-align: center; color: var(--text-primary); }
 
 	.regcourse-list { display: flex; flex-direction: column; gap: calc(12 * var(--px)); }
-	.regcourse-list .card-box { display: flex; flex-direction: column; gap: calc(32 * var(--px)); border-radius: 0; }
+	.regcourse-list .card-box { display: flex; flex-direction: column; gap: calc(32 * var(--px)); padding: calc(20 * var(--px)); border-radius: 0; }
 	.regcourse-list .regcourse-notice { padding: calc(20 * var(--px)); font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-primary); }
 
 	.regcourse-action { display: flex; flex-direction: column; gap: calc(8 * var(--px)); }
@@ -139,7 +139,7 @@
 	.course-search .page-tit { padding: calc(32 * var(--px)) var(--init-layout-padding) calc(20 * var(--px)); font-weight: 600; font-size: calc(20 * var(--px)); line-height: calc(28 * var(--px)); text-align: center; color: var(--text-primary); }
 
 	.course-best { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: calc(12 * var(--px)); padding: 0 var(--init-layout-padding) calc(20 * var(--px)); }
-	.course-search .sec-line { --full-bg: var(--bg-gray-hover); position: relative; height: calc(8 * var(--px)); } /* 구분 띠 (최대 폭 바깥까지) */
+	.course-search .sec-line { --full-bg: var(--bg-gray); position: relative; height: calc(8 * var(--px)); } /* 구분 띠 (최대 폭 바깥까지) */
 
 	.course-search .search-box { padding: calc(32 * var(--px)) var(--init-layout-padding) calc(24 * var(--px)); }
 	.course-filter { display: flex; flex-direction: column; gap: calc(12 * var(--px)); padding: 0 var(--init-layout-padding) calc(12 * var(--px)); }
@@ -159,13 +159,13 @@
 	.member-list { display: flex; flex-direction: column; gap: calc(12 * var(--px)); }
 	.member-card { display: flex; place-items: center; gap: calc(12 * var(--px)); width: 100%; padding: calc(20 * var(--px)); border: 1px solid var(--border-default); border-radius: calc(4 * var(--px)); background: white; text-align: left; }
 	.member-card::after { content: ""; flex-shrink: 0; width: calc(24 * var(--px)); height: calc(24 * var(--px)); background: url("../images/ico/ico_chevron_r24.svg") no-repeat center / contain; }
-	.member-card > div { display: flex; flex-direction: column; gap: calc(4 * var(--px)); flex: 1; min-width: 0; }
-	.member-card .name { font-weight: 600; font-size: calc(16 * var(--px)); line-height: calc(22 * var(--px)); color: var(--text-primary); }
-	.member-card .dept { display: flex; place-items: center; gap: calc(6 * var(--px)); overflow: hidden; font-weight: 300; font-size: calc(14 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-secondary); white-space: nowrap; }
+	.member-card > div { display: flex; flex-direction: column; gap: calc(12 * var(--px)); flex: 1; min-width: 0; }
+	.member-card .name { overflow: hidden; font-weight: 600; font-size: calc(16 * var(--px)); line-height: calc(22 * var(--px)); color: var(--text-primary); text-overflow: ellipsis; white-space: nowrap; }
+	.member-card .dept { display: flex; place-items: center; gap: calc(6 * var(--px)); overflow: hidden; font-weight: 300; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-secondary); white-space: nowrap; }
 	.member-card .dept span + span::before { content: ""; display: inline-block; width: 1px; height: calc(8 * var(--px)); margin-right: calc(6 * var(--px)); background: var(--divider-default); vertical-align: middle; }
 
 /* 인재역량관리 상세 (팝업) */
-	.talent .tab-btn { padding: calc(12 * var(--px)) var(--init-layout-padding); }
+	.talent .tab-btn { padding: calc(20 * var(--px)) var(--init-layout-padding); } /* 탭 위아래 20 (가이드) */
 	.talent-info { display: flex; flex-direction: column; gap: calc(12 * var(--px)); padding: calc(20 * var(--px)); background: var(--bg-page); }
 	.talent-info > * { border-radius: calc(4 * var(--px)); background: white; }
 
