@@ -67,6 +67,7 @@ body, #app {display:flex; flex-direction:column; place-content:space-between; fl
 	.seg-toggle button:last-child { border-radius: 0 3px 3px 0; }
 	.seg-toggle button.active { border-color: var(--bg-type01); background: var(--bg-type01); color: white; }
 
+	
 	.h-wrap .h-usr { width: 282px; }
 	.h-wrap .user-thumb { position: relative; }
 	.h-wrap .user-camera-btn { position: absolute; bottom: 0; right: 0; height: auto; }
