@@ -91,6 +91,8 @@ app/
 | `.seg-toggle` | 선택 토글 (국문/영문), 선택 버튼 `.active` |
 | `.list-count` | List Count (전체 7) |
 | `.btn-l-primary` | Button / Large (높이 44 가이드 기준, SemiBold, 가로 꽉 참). 앞 아이콘은 버튼 안 img |
+| `.form-txt` | 입력창 (높이 40, 테두리 border/default). `input.form-txt`로 써야 PC 초기화보다 우선 |
+| `.form-chk` | 체크 버튼 (원형 24, label 안에 checkbox + 글자). Figma 컴포넌트 "체크 버튼" |
 
 - 하단 탭바 아이콘은 SVG + CSS `mask`로 색 변경 (활성/비활성). PNG 스프라이트 전환 여부는 미정.
 - 차트는 PC와 같은 Chart.js(`../../js/chart.js`) + datalabels 사용.
@@ -103,6 +105,7 @@ app/
 |---|---|---|
 | splash | `page/splash.jsp` | 배경 #f5f7fa 바깥까지 |
 | 앱 설치 안내 | `page/install.jsp` | Android / iPhone 카드 |
+| 로그인 (2026-11-03) | `page/login.jsp` | Figma 최종에 없음 → PC `bluebell/page/login.jsp` 내용 + 가이드 기준. 바탕 #f5f7fa(splash와 같음), 위 로고, Login 오른쪽 끝 언어 아이콘, 체크는 **자동 로그인**(Figma 이전시안 설치 안내 그림 기준). 간격은 가이드 값으로 정함 |
 | 메인 | `page/main.jsp` | 프로필·배지, 학습현황 차트, 진행현황, 공지/FAQ, 추천 교육 2종, 바로가기 배너, 푸터 |
 | 알림 (팝업) | `page/popup/alarm.jsp` | 헤더 종 아이콘으로 열림, 읽은 알림 `li.read` |
 

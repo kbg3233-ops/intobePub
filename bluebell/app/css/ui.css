@@ -122,6 +122,16 @@
 /* 셀렉트 (높이 40) */
 	.sel-type { width: 100%; height: calc(40 * var(--px)); padding: 0 calc(32 * var(--px)) 0 calc(12 * var(--px)); border: 1px solid var(--border-disabled); border-radius: calc(4 * var(--px)); background: white url("../images/ico/ico_caret_down.svg") no-repeat right calc(8 * var(--px)) center / calc(20 * var(--px)); font-weight: 300; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-primary); text-overflow: ellipsis; appearance: none; }
 
+/* 입력창 (높이 40) : PC common.css의 input[type] 초기화보다 우선하도록 input.form-txt */
+	input.form-txt { width: 100%; height: calc(40 * var(--px)); padding-inline: calc(12 * var(--px)); border: 1px solid var(--border-default); border-radius: calc(4 * var(--px)); background: var(--bg-white); font-weight: 300; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-primary); }
+	input.form-txt::placeholder { color: var(--text-tertiary); }
+
+/* 체크 버튼 (원형 24) : label 안에 input checkbox + 글자 */
+	.form-chk { display: inline-flex; place-items: center; gap: calc(8 * var(--px)); font-weight: 300; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-primary); cursor: pointer; }
+	.form-chk input { flex-shrink: 0; width: calc(24 * var(--px)); height: calc(24 * var(--px)); margin: 0; border-radius: 50%; background: var(--brand-grey) url("../images/ico/ico_check.svg") no-repeat center / calc(12 * var(--px)); appearance: none; cursor: pointer; }
+	.form-chk input:checked { background-color: var(--primary-default); }
+	.form-chk input:disabled { opacity: .4; cursor: default; }
+
 /* 정렬 (최신순 | 인기순) : 선택된 버튼에 .active */
 	.sort-tab { display: flex; place-items: center; gap: calc(10 * var(--px)); }
 	.sort-tab button { font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-tertiary); white-space: nowrap; }
