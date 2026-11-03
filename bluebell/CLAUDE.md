@@ -36,6 +36,7 @@
   - PC path: http://localhost:8080/bluebell/path/
   - 앱 path: http://localhost:8080/bluebell/app/path/
 - 다른 컴퓨터는 Tomcat 위치·설정이 다를 수 있으니 처음에 확인
+  - D 드라이브 컴퓨터 (2026-11-03 확인): 퍼블 `D:\work\intobe`, Tomcat `D:\tools\apache-tomcat-10.1.61`, `ROOT.xml` docBase `D:/work/Intobe`, JDK는 같은 `C:\Program Files\Java\jdk-27.0.1.0.3`
 - Claude의 Bash에서는 localhost 접속이 안 될 수 있음 → PowerShell로 확인·캡처
 
 ## 작업 방식 (사용자와 정한 것)
