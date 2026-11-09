@@ -95,6 +95,12 @@
 - **`main`에 합침** (사용자 결정): `publish/course-list`의 bluebell 작업을 `main`에 합치고 push (`10f00d0`). 바뀐 파일은 전부 `bluebell/` 안이라 다른 고객사에 영향 없음. 개발자에게는 "`main` 보면 된다"로 안내. 앞으로도 작업이 정리되면 `main`에 합치기
 - **pull 하면 기록부터 읽기** (사용자 요청): `git pull` 후 이 파일과 `app/CLAUDE.md`를 읽고 상태·다음 할 일·컴퓨터별 차이를 알려준 뒤 시작. 루트 `CLAUDE.md` 기본 원칙 6번에도 적음
 - D 드라이브 컴퓨터 세팅: 커밋 이메일 `on3233@intobe.co.kr`로 설정, Tomcat 경로 확인 ("로컬 서버"에 기록). pull로 받은 `layout.css` 빈 줄 제거 후 `main`에도 합침
+- C 드라이브 컴퓨터: 전역 git 이름·이메일 설정 (`bg` / `on3233@intobe.co.kr`). VS Code Servers에 Tomcat이 안 보이면 Community Server Connector가 Stopped라서 → 커넥터 Start 후 Tomcat 10.x Start
+
+### 2026-11-09
+
+- **Figma는 최종·컴포넌트·가이드만 확인** (사용자 결정). 이전시안·연습 페이지는 읽지 않음. 최종 섹션은 0~3번까지 (4번 없음) → 시안 화면은 모두 완료
+- **언어 선택 팝업**: 세 페이지에 시안 없음 → **디자인 나오면 그때 작업** (사용자 결정)
 
 ## PC 작업 기록
 
