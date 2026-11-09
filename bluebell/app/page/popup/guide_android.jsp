@@ -52,7 +52,7 @@
 						<div class="guide-cont">
 							<div class="illust"><img src="../images/img/guide/img_guide_android_05.png" alt=""></div>
 							<div class="desc">
-								<p class="txt">‘보안을 위해 차단됨’ 안내가 표시되면 [설정]을 클릭 합니다.</p>
+								<p class="txt">‘보안을 위해 차단됨’ 안내가 표시되면 [설정]을 클릭합니다.</p>
 								<p class="note">※ 이 출처의 앱 설치 허용이 필요합니다.</p>
 							</div>
 						</div>
@@ -62,7 +62,7 @@
 						<div class="guide-cont">
 							<div class="illust"><img src="../images/img/guide/img_guide_android_06.png" alt=""></div>
 							<div class="desc">
-								<p class="txt">‘이 출처의 앱 설치 허용’을 켜습니다.</p>
+								<p class="txt">‘이 출처의 앱 설치 허용’을 켭니다.</p>
 								<p class="note">※ 해당 브라우저에 한해 1회만 설정하면 됩니다.</p>
 							</div>
 						</div>
@@ -81,7 +81,7 @@
 						<div class="guide-cont">
 							<div class="illust"><img src="../images/img/guide/img_guide_android_08.png" alt=""></div>
 							<div class="desc">
-								<p class="txt">Play Protect 검사 안내가 표시되면 [설치]를 클릭 합니다.</p>
+								<p class="txt">Play Protect 검사 안내가 표시되면 [설치]를 클릭합니다.</p>
 							</div>
 						</div>
 					</li>
