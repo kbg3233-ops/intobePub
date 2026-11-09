@@ -110,6 +110,21 @@
 
 	.install .install-note { margin-top: calc(40 * var(--px)); font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); text-align: center; color: var(--text-tertiary); }
 
+/* 설치 가이드 (하단 오버레이 팝업 + 단계 슬라이드) : popup/guide_android.jsp, popup/guide_ios.jsp */
+	.guide .part-cont { padding: calc(20 * var(--px)) 0 calc(12 * var(--px)); }
+	.guide .swiper-slide { padding-inline: var(--init-layout-padding); }
+	.guide-step { display: flex; place-items: center; gap: calc(10 * var(--px)); }
+	.guide-step .num { display: flex; place-items: center; place-content: center; flex-shrink: 0; width: calc(24 * var(--px)); height: calc(24 * var(--px)); border-radius: calc(5 * var(--px)); background: var(--brand-dark); font-weight: 600; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-on-primary); }
+	.guide-step .tit { font-weight: 600; font-size: calc(16 * var(--px)); line-height: calc(22 * var(--px)); color: var(--text-primary); }
+	.guide-cont { overflow: hidden; margin-top: calc(16 * var(--px)); border-radius: calc(12 * var(--px)); }
+	.guide-cont .illust { background: var(--bg-gray); }
+	.guide-cont .illust img { display: block; width: 100%; height: auto; }
+	.guide-cont .desc { display: flex; flex-direction: column; gap: calc(6 * var(--px)); padding: calc(20 * var(--px)); background: var(--bg-gray-hover); word-break: keep-all; }
+	.guide-cont .desc .txt { font-weight: 500; font-size: calc(14 * var(--px)); line-height: calc(20 * var(--px)); color: var(--text-primary); }
+	.guide-cont .desc .txt img { display: inline-block; width: calc(14 * var(--px)); height: calc(14 * var(--px)); margin-inline: calc(2 * var(--px)); vertical-align: calc(-2 * var(--px)); } /* 메뉴 경로 > */
+	.guide-cont .desc .note { font-size: calc(12 * var(--px)); line-height: calc(16 * var(--px)); color: var(--text-secondary); }
+	.guide .dot-pagination { margin-top: calc(18 * var(--px)); }
+
 /* 로그인 */
 	body:has(.login) { background-color: var(--bg-page); } /* 최대 폭 바깥 영역까지 배경색 */
 	.login { display: flex; flex-direction: column; flex: 1; padding: calc(90 * var(--px)) var(--init-layout-padding) calc(40 * var(--px)); background: var(--bg-page); }

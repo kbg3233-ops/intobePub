@@ -3,7 +3,22 @@ $(function () {
 	$(".seg-toggle").segToggle(); // 선택 토글
 	$(".tab-btn").segToggle(); // 버튼형 탭 (선택 토글과 같은 방식)
 	$(document).tta(); // 활성화 토글 (팝업 열기/닫기)
+	$(".guide-swiper").guideSwiper(); // 설치 가이드 단계 슬라이드
 });
+
+// 설치 가이드 슬라이드 : Swiper(PC common.js) + 점 페이지 표시, 팝업을 열 때마다 1단계부터
+$.fn.guideSwiper = function () {
+	return this.each(function () {
+		var $pop = $(this).closest("[data-ttatg]"),
+			swiper = new Swiper(this, {
+				pagination: { el: $pop.find(".dot-pagination")[0], clickable: true }
+			});
+
+		$(document).on("click", "[data-tta='" + $pop.data("ttatg") + "']", function () {
+			if ($pop.hasClass("active")) swiper.slideTo(0, 0);
+		});
+	});
+};
 
 // 활성화 토글 : data-tta="이름" 클릭 시 data-ttatg="이름"에 .active 토글 (PC front.js와 같은 방식)
 $.fn.tta = function () {

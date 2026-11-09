@@ -12,7 +12,7 @@
 ## 시안
 
 - Figma: 부루벨에듀_모바일 — https://www.figma.com/design/ruyv05mdpEB01w42rCDG8r
-- 작업 기준 페이지: **최종** (섹션: 0. 앱 아이콘 / 1. 시작·공통 / 2. 교육과정 / 3. 조직도 — 4번 이후 없음)
+- 작업 기준 페이지: **최종** (섹션: 0. 앱 아이콘 / 1. 시작·공통 / 2. 교육과정 / 3. 조직도 / 4. 설치 가이드)
 - **확인하는 페이지는 최종·컴포넌트·가이드만** (사용자 결정 2026-11-09). "이전시안"(`739:107`)·"연습" 페이지는 읽지 않는다
 - 시안 기준 폭 **375px** (상단 상태바 47px, 하단 홈 인디케이터 20px은 마크업하지 않음 → `safe-area`로 처리)
 
@@ -74,6 +74,7 @@ app/
 - PC·아주대와 같은 방식: 팝업 파일은 `page/popup/이름.jsp` (`data-ttatg="이름"`), 여는 버튼은 `data-tta="이름"` → `.active` 토글 (`js/front.js`의 `tta`)
 - 확인용 목록 페이지: `page/popup.jsp` (path 맨 위 "팝업"). 새 팝업을 만들면 여기에 버튼 추가
 - 전체 화면 팝업: `.pop-type-full` (`.part-wrap` / `.part-head` / `.part-title` / `.part-close` / `.part-cont`)
+- 하단 오버레이 팝업: `.pop-type-sheet` (`.part-dim`(눌러도 닫힘) / `.part-wrap` / `.part-head` / `.part-title` / `.part-close` 24 / `.part-cont` / `.part-foot`). 가이드 "하단 오버레이": 위 모서리 radius 16, 딤 검정 40%
 - 알림 팝업(`popup/alarm.jsp`)은 `header.jsp`, `sub_header.jsp`에 include되어 있음 (PC 헤더의 m-alarm과 같은 구조)
 
 ## 공통 컴포넌트 (`css/ui.css`)
@@ -94,6 +95,9 @@ app/
 | `.btn-l-primary` | Button / Large (높이 44 가이드 기준, SemiBold, 가로 꽉 참). 앞 아이콘은 버튼 안 img |
 | `.form-txt` | 입력창 (높이 40, 테두리 border/default). `input.form-txt`로 써야 PC 초기화보다 우선 |
 | `.form-chk` | 체크 버튼 (원형 24, label 안에 checkbox + 글자). Figma 컴포넌트 "체크 버튼" |
+| `.btn-l-line` | Button / Large Line (흰 바탕 + 테두리 border/default) |
+| `.swiper` / `.swiper-wrapper` / `.swiper-slide` | 슬라이드. Swiper 7.4.1은 PC `js/common.js`에 이미 들어 있어 그대로 사용, CSS는 기본값만 ui.css에 |
+| `.dot-pagination` | 점 페이지 표시 (6px, 간격 7, 활성 primary / 비활성 #d9d9d9). Swiper `pagination.el` |
 
 - 하단 탭바 아이콘은 SVG + CSS `mask`로 색 변경 (활성/비활성). PNG 스프라이트 전환 여부는 미정.
 - 차트는 PC와 같은 Chart.js(`../../js/chart.js`) + datalabels 사용.
@@ -153,6 +157,24 @@ Figma "최종" 페이지의 `2. 교육과정` 섹션(`1471:14242`): 정규과정
 
 - `page/main.jsp` 차트 스크립트 색(#96c0cf, #e2698b, #e2e2e2)은 JS라 그대로 둠 (값은 토큰과 같음)
 - `.seg-toggle` 테두리 #c9c9c9, 푸터 글자 #bdbdbd는 가이드 Semantic에 없는 색이라 그대로 둠
+
+### 4. 설치 가이드 — 완료 (2026-11-09)
+
+Figma "최종" 페이지의 `4. 설치 가이드` 섹션(`1792:790`): Android 10단계 / iOS 6단계
+
+| 화면 | 파일 | 비고 |
+|---|---|---|
+| Android 설치 안내 | `page/popup/guide_android.jsp` | 하단 오버레이 팝업 + 단계 슬라이드 10장 (`data-tta="guideAndroid"`) |
+| iOS 설치 안내 | `page/popup/guide_ios.jsp` | 6장 (`data-tta="guideIos"`) |
+
+- 앱 설치 안내(`install.jsp`)의 "Android 설치 안내" / "Ios 설치 안내" 링크로 열림 (a → button). `popup.jsp`에도 버튼 추가
+- 슬라이드: 손가락으로 넘기기 + 점 눌러 이동, 팝업을 열 때마다 1단계부터 (`front.js`의 `guideSwiper`)
+- `.swiper`에 `touch-action: pan-y` 필수 (Swiper CSS를 안 불러서 빠져 있었음). 없으면 F12 기기 모드에서 밀기가 끊김. Swiper는 페이지를 열 때 터치 기기인지 한 번만 판단하므로, F12에서 기기 모드로 바꾼 뒤에는 새로고침해서 확인
+- 단계 그림은 Figma `illust`를 2배 PNG로 받음 (`images/img/guide/img_guide_android_01~10.png`, `img_guide_ios_01~06.png`, 670×480)
+- 시안 뒤 배경(상태바·크롬/사파리 주소창)은 설명용이라 마크업하지 않음. 팝업 높이는 가장 긴 단계 기준 (시안 600/580 고정 아님)
+- **가이드와 다른 점 → 가이드대로**: 하단 "확인" 버튼 14 Medium → Button / Large 16 SemiBold, X 색 #666 → 기존 `ico_close.svg`(border/strong #333)
+- 시안 그대로 둔 것: 점 비활성 #d9d9d9 (Semantic에 없는 색), 문구 "켜습니다"(6단계)·"클릭 합니다"(5·8단계) 띄어쓰기 → 문구 확정 필요
+- "확인" 버튼 = 팝업 닫기 (시안 레이어명은 btn-next/btn-prev지만 글자가 "확인"이라 닫기로 함)
 
 ## 남은 확인 사항
 

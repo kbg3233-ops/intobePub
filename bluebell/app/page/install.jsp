@@ -17,7 +17,7 @@
 					<p>APK 직접 설치</p>
 					<a href="#" class="btn-m-primary">다운로드</a>
 				</div>
-				<a href="#" class="lnk-info"><img src="../images/ico/ico_info.svg" alt="">Android 설치 안내</a>
+				<button type="button" class="lnk-info" data-tta="guideAndroid"><img src="../images/ico/ico_info.svg" alt="">Android 설치 안내</button>
 			</li>
 			<li>
 				<div class="install-card">
@@ -26,10 +26,12 @@
 					<p>App Store</p>
 					<a href="#" class="btn-m-primary">설치하기</a>
 				</div>
-				<a href="#" class="lnk-info"><img src="../images/ico/ico_info.svg" alt="">Ios 설치 안내</a>
+				<button type="button" class="lnk-info" data-tta="guideIos"><img src="../images/ico/ico_info.svg" alt="">Ios 설치 안내</button>
 			</li>
 		</ul>
 	</div>
 	<p class="install-note">본 앱은 BBK 임직원용 입니다.<br>설치 후 BBK 계정으로 로그인해 주세요.</p>
 </main>
+<%@ include file="popup/guide_android.jsp" %>
+<%@ include file="popup/guide_ios.jsp" %>
 <%@ include file="../inc/global_footer.jsp" %>
