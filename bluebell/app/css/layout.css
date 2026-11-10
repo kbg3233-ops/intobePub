@@ -52,4 +52,5 @@
 	.tabbar .tb-course a::before { -webkit-mask-image: url("../images/ico/ico_tab_course.svg"); mask-image: url("../images/ico/ico_tab_course.svg"); }
 	.tabbar .tb-study a::before { -webkit-mask-image: url("../images/ico/ico_tab_study.svg"); mask-image: url("../images/ico/ico_tab_study.svg"); }
 	.tabbar .tb-team a::before { -webkit-mask-image: url("../images/ico/ico_tab_team.svg"); mask-image: url("../images/ico/ico_tab_team.svg"); }
+	.tabbar .tb-news a::before { -webkit-mask-image: url("../images/ico/ico_tab_news.svg"); mask-image: url("../images/ico/ico_tab_news.svg"); }
 	.tabbar .tb-all a::before { -webkit-mask-image: url("../images/ico/ico_tab_all.svg"); mask-image: url("../images/ico/ico_tab_all.svg"); }

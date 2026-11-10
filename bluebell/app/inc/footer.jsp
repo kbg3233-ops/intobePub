@@ -1,7 +1,7 @@
 <%@ page contentType = "text/html; charset=UTF-8" %>
 <%--
 	하단 메뉴
-	- tabbarOn : 활성 메뉴 (home / course / study / team / all)
+	- tabbarOn : 활성 메뉴 (home / course / study / team / news / all)
 	- hideTabbar : true면 하단 메뉴 숨김 (알림)
 --%>
 <%
@@ -20,6 +20,9 @@
 		<li class="tb-course<%= tabbarOn.equals("course") ? " active" : "" %>"><a href="#">교육과정</a></li>
 		<li class="tb-study<%= tabbarOn.equals("study") ? " active" : "" %>"><a href="#">나의학습</a></li>
 		<li class="tb-team<%= tabbarOn.equals("team") ? " active" : "" %>"><a href="#">My team</a></li>
+		<%-- 권한에 따라 My team 대신 News 노출 (권한 처리는 개발)
+		<li class="tb-news<%= tabbarOn.equals("news") ? " active" : "" %>"><a href="#">News</a></li>
+		--%>
 		<li class="tb-all<%= tabbarOn.equals("all") ? " active" : "" %>"><a href="#">전체</a></li>
 	</ul>
 </nav>

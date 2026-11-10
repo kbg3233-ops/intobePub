@@ -64,7 +64,7 @@ app/
 | `pageTabs` / `pageTabOn` | 서브 헤더 아래 탭 (`String[]`, 활성 순서 0부터) |
 | `hideUtil` | true → 알림·언어 아이콘 숨김 |
 | `closeBtn` | true → ‹ 없이 제목 + 오른쪽 X (X = 뒤로가기, 알림·언어 없음, 헤더 아래 선). 상세 화면용 |
-| `tabbarOn` | 하단 메뉴 활성: home / course / study / team / all |
+| `tabbarOn` | 하단 메뉴 활성: home / course / study / team / news / all |
 | `hideTabbar` | true → 하단 메뉴 숨김 |
 
 - 메인 헤더: `inc/header.jsp`, 서브 헤더: `inc/sub_header.jsp`, 탭바 없는 화면(splash 등): `global_header.jsp` / `global_footer.jsp` 직접 include
